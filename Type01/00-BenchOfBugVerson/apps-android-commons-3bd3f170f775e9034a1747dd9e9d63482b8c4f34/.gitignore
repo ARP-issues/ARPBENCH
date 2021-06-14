@@ -1,0 +1,25 @@
+# IDEA files
+*.iml
+*.iws
+*.ipr
+.idea
+
+# Gradle
+.gradle
+local.properties
+/.gradle
+/build
+/app/build
+
+# IDE / Text editor files
+.nb-gradle
+.nb-gradle-properties
+*.sw[op]
+*~
+*.sublime-*
+.textmate
+.java-version
+
+# OS files
+*.DS_Store
+Thumbs.db

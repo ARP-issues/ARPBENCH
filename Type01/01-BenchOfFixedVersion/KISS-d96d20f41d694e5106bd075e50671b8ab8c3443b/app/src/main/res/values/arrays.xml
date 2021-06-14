@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string-array name="themesEntries">
+        <item>Light theme (default)</item>
+        <item>Semi-transparent theme</item>
+        <item>Transparent theme</item>
+        <item>Dark theme</item>
+        <item>Dark semi-transparent theme</item>
+        <item>Dark transparent theme</item>
+    </string-array>
+    <string-array name="themesValues" translatable="false">
+        <item>light</item>
+        <item>semi-transparent</item>
+        <item>transparent</item>
+        <item>dark</item>
+        <item>semi-transparent-dark</item>
+        <item>transparent-dark</item>
+    </string-array>
+    <string-array name="sortAppListEntries">
+        <item>From A to Z</item>
+        <item>From Z to A</item>
+    </string-array>
+    <string-array name="sortAppListValues" translatable="false">
+        <item>alphabetical</item>
+        <item>invertedAlphabetical</item>
+    </string-array>
+    <string-array name="historyModeEntries">
+        <item>Most recent first</item>
+        <item>Most frequent first (frecency)</item>
+    </string-array>
+    <string-array name="historyModeValues" translatable="false">
+        <item>recency</item>
+        <item>frecency</item>
+    </string-array>
+    <string-array name="defaultSearchProviders" tools:ignore="InconsistentArrays">
+        <item>Bing|https://www.bing.com/search?q={q}</item>
+        <item>DuckDuckGo|https://duckduckgo.com/?q={q}</item>
+        <item>Google|https://encrypted.google.com/search?q={q}</item>
+        <item>Yahoo|https://search.yahoo.com/search?p={q}</item>
+    </string-array>
+</resources>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010-2014 Paul Watts (paulcwatts@gmail.com)
+    and individual contributors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+    <string-array name="main_help_options">
+        <item>Show Tutorial</item>
+        <item>Legend</item>
+        <item>What\'s New?</item>
+        <item>Supported Agencies</item>
+        <item>Twitter Feed</item>
+        <item>Contact Us</item>
+    </string-array>
+    <string-array name="main_help_options_no_contact_us">
+        <item>Show Tutorial</item>
+        <item>Legend</item>
+        <item>What\'s New?</item>
+        <item>Supported Agencies</item>
+        <item>Twitter Feed</item>
+    </string-array>
+    <string-array name="route_favorite_options">
+        <item>This stop</item>
+        <item>All stops</item>
+    </string-array>
+    <string-array name="sort_stops">
+        <item>Name</item>
+        <item>Most frequently used</item>
+    </string-array>
+    <string-array name="sort_reminders">
+        <item>Name</item>
+        <item>Time</item>
+    </string-array>
+    <string-array name="sort_arrivals">
+        <item>Estimated arrival</item>
+        <item>Route</item>
+    </string-array>
+    <string-array name="search_stop_options">
+        <item>Show arrivals</item>
+        <item>Show on map</item>
+    </string-array>
+    <string-array name="search_route_options">
+        <item>Show list of stops</item>
+        <item>Show on map</item>
+    </string-array>
+    <string-array name="reminder_time">
+        <item>No reminder</item>
+        <item>1 minute</item>
+        <item>3 minutes</item>
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+        <item>20 minutes</item>
+        <item>25 minutes</item>
+        <item>30 minutes</item>
+    </string-array>
+    <string-array name="reminder_days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+    <string-array name="report_stop_problem_code">
+        <item>Choose a problem</item>
+        <item>Stop name is wrong</item>
+        <item>Stop number is wrong</item>
+        <item>Location is wrong</item>
+        <item>Route or trip is missing</item>
+        <item>Something else</item>
+    </string-array>
+    <string-array name="report_trip_problem_code_bus">
+        <item>Choose a problem</item>
+        <item>The bus never came</item>
+        <item>It came earlier than predicted</item>
+        <item>It came later than predicted</item>
+        <item>Wrong destination shown</item>
+        <item>The bus doesn\'t stop here</item>
+        <item>Something else</item>
+    </string-array>
+    <string-array name="preferred_units_options">
+        <item>@string/preferences_preferred_units_option_automatic</item>
+        <item>@string/preferences_preferred_units_option_metric</item>
+        <item>@string/preferences_preferred_units_option_imperial</item>
+    </string-array>
+    <string-array name="arrival_info_style_options">
+        <item>@string/preferences_arrival_info_style_options_a</item>
+        <item>@string/preferences_arrival_info_style_options_b</item>
+    </string-array>
+
+    <!-- Spoken directions based on 16 compass points, but pointing from the user's current location
+         towards the selected bus stop instead of N/S/E/W. -->
+    <string-array name="spoken_compass_directions">
+        <item>straight ahead</item>
+        <!-- North -->
+        <item>slight left</item>
+        <!-- NNE -->
+        <item>slight left</item>
+        <!-- NE -->
+        <item>left</item>
+        <!-- ENE -->
+        <item>left</item>
+        <!-- East -->
+        <item>behind you to left</item>
+        <!-- ESE -->
+        <item>behind you to left</item>
+        <!-- SE -->
+        <item>behind you to left</item>
+        <!-- SSE -->
+        <item>straight behind you</item>
+        <!-- South -->
+        <item>behind you to right</item>
+        <!-- SSW -->
+        <item>behind you to right</item>
+        <!-- SW -->
+        <item>behind you to right</item>
+        <!-- WSW -->
+        <item>right</item>
+        <!-- West -->
+        <item>right</item>
+        <!-- WNW -->
+        <item>slight right</item>
+        <!-- NW -->
+        <item>slight right</item>
+        <!-- NNW -->
+    </string-array>
+    <!-- Issue reporting -->
+    <string-array name="report_types">
+        <item>@string/rt_customer_service</item>
+        <item>@string/rt_infrastructure_problem</item>
+        <item>@string/rt_arrival_problem</item>
+        <item>@string/rt_app_feedback</item>
+        <item>@string/rt_ideas</item>
+    </string-array>
+    <string-array name="report_types_desc">
+        <item>@string/rt_message_customer_service</item>
+        <item>@string/rt_message_infrastructure_problem</item>
+        <item>@string/rt_message_arrival_problem</item>
+        <item>@string/rt_message_app_feedback</item>
+        <item>@string/rt_message_ideas</item>
+    </string-array>
+
+    <array name="report_types_icons">
+        <item>@drawable/ic_customer_service</item>
+        <item>@drawable/ic_stop_flag_triangle</item>
+        <item>@drawable/ic_arrival_time</item>
+        <item>@drawable/ic_app_feedback</item>
+        <item>@drawable/ic_light_bulb</item>
+    </array>
+
+    <string-array name="report_types_without_open311">
+        <item>@string/rt_customer_service</item>
+        <item>@string/rt_stop_problem</item>
+        <item>@string/rt_arrival_problem</item>
+        <item>@string/rt_app_feedback</item>
+        <item>@string/rt_ideas</item>
+    </string-array>
+
+    <string-array name="report_types_desc_without_open311">
+        <item>@string/rt_message_customer_service</item>
+        <item>@string/rt_message_stop_problem</item>
+        <item>@string/rt_message_arrival_problem</item>
+        <item>@string/rt_message_app_feedback</item>
+        <item>@string/rt_message_ideas</item>
+    </string-array>
+
+    <array name="report_types_icons_without_open311">
+        <item>@drawable/ic_customer_service</item>
+        <item>@drawable/ic_stop_flag_triangle</item>
+        <item>@drawable/ic_arrival_time</item>
+        <item>@drawable/ic_app_feedback</item>
+        <item>@drawable/ic_light_bulb</item>
+    </array>
+
+    <string-array name="report_stop_issue_tutorial_desc">
+        <item>Click on the bus stop, that you want to report.</item>
+        <item>Then select report problem section from options.</item>
+        <item>Submit your bus stop related problem.</item>
+    </string-array>
+
+    <string-array name="report_stop_transit_category_keywords">
+        <item>transit</item>
+        <item>\u0020bus\u0020</item> <!-- Include spaces to not match as part of another word -->
+        <item>stop</item>
+        <item>route/trip is missing</item>
+        <item>passenger</item>
+        <item>onebusaway</item>
+    </string-array>
+
+    <string-array name="report_trip_transit_category_keywords">
+        <item>arrival</item>
+        <item>schedule</item>
+    </string-array>
+
+    <string-array name="report_stop_id_field_keywords">
+        <item>stop</item>
+        <item>id</item>
+        <item>bus</item>
+    </string-array>
+
+    <string-array name="transit_mode_array">
+        <item>@string/transit_mode_transit_and_bikeshare</item>
+        <item>@string/transit_mode_transit_only</item>
+        <item>@string/transit_mode_bus</item>
+        <item>@string/transit_mode_rail</item>
+        <item>@string/transit_mode_bikeshare</item>
+    </string-array>
+
+    <string-array name="trip_plan_leaving_arriving_array">
+        <item>@string/trip_plan_leaving</item>
+        <item>@string/trip_plan_arriving</item>
+    </string-array>
+
+</resources>

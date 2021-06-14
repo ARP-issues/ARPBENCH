@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2010-2014 Paul Watts (paulcwatts@gmail.com)
+    and individual contributors.
+    Copyright (c) 2017 Microsoft Corporation
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+    <!-- DO NOT TRANSLATE ANY STRINGS IN THIS FILE. -->
+
+    <!-- Android Maps API v2 -->
+    <string name="apiv2_key">AIzaSyBxVM57hZ2WLRgtixDs_G5BGbK90mM5S5U</string>
+    <string name="android_maps_v2_market_url">market://details?id=com.google.android.apps.maps</string>
+
+    <!-- Preference keys -->
+    <string name="preference_key_region">preference_region</string>
+    <string name="preference_key_oba_api_url">preferences_oba_api_url</string>
+    <string name="preference_key_otp_api_url">preferences_otp_api_url</string>
+    <string name="preference_key_otp_api_url_version">preferences_otp_api_url_structure</string>
+    <string name="preference_key_last_region_update">preference_last_region_update</string>
+    <string name="preference_key_auto_select_region">preference_auto_select_region</string>
+    <string name="preference_key_experimental_regions">preference_experimental_regions</string>
+    <string name="preferences_key_analytics">preference_google_analytics</string>
+    <string name="preferences_key_donate">preference_donate</string>
+    <string name="preferences_key_powered_by_oba">preference_powered_by_oba</string>
+    <string name="preferences_key_about">preference_about</string>
+    <string name="preference_key_preferred_units">preference_preferred_units</string>
+    <string name="preference_key_arrival_info_style">preference_arrival_info_style</string>
+    <string name="preference_key_show_negative_arrivals">preference_show_negative_arrivals</string>
+    <string name="preference_key_show_zoom_controls">preference_show_zoom_controls</string>
+    <string name="preference_key_default_stop_sort">preference_default_stop_sort</string>
+    <string name="preference_key_default_reminder_sort">preference_default_reminder_sort</string>
+    <string name="preference_key_tutorial">preference_key_tutorial</string>
+    <string name="preference_key_show_header_arrivals">preference_key_show_header_arrivals</string>
+    <string name="preference_key_tutorial_counter">preference_key_tutorial_counter</string>
+    <string name="preference_key_show_tutorial_screens">preference_key_show_tutorial_screens</string>
+    <string name="preference_key_notifications">preference_key_notifications</string>
+    <string name="preference_key_trip_plan_notifications">preference_key_trip_plan_notifications</string>
+    <string name="preference_key_left_hand_mode">preference_key_left_hand_mode</string>
+    <string name="preference_key_save_backup">preference_key_save_backup</string>
+    <string name="preference_key_restore_backup">preference_key_restore_backup</string>
+    <string name="preference_key_never_show_location_dialog">never_show_location_dialog</string>
+    <string name="preference_key_layer_bikeshare_visible">layer_bike_selected</string>
+    <string name="preference_key_trip_plan_travel_by">preference_trip_plan_travel_by</string>
+    <string name="preference_key_trip_plan_maximum_walking_distance">preference_trip_plan_maximum_walking_distance</string>
+    <string name="preference_key_trip_plan_minimize_transfers">preference_trip_plan_minimize_transfers</string>
+    <string name="preference_key_trip_plan_avoid_stairs">preference_trip_plan_avoid_stairs</string>
+    <string name="preference_key_notification_sound">preference_notification_sound</string>
+    <string name="preference_key_preference_vibrate_allowed">preference_vibrate_allowed</string>
+    <string name="preference_key_social_category">preference_category_social</string>
+    <string name="preference_key_social">preference_social</string>
+    <string name="preference_key_never_show_payment_warning_dialog">never_show_payment_warning_dialog</string>
+
+    <!-- Regions API URL -->
+    <string name="regions_api_url">http://regions.onebusaway.org/regions-v3.json</string>
+
+    <!-- Donate URL -->
+    <string name="donate_url">http://onebusaway.org/donate/</string>
+
+    <!-- IdeaScale URL -->
+    <string name="ideascale_url">http://onebusaway.ideascale.com/a/ideas/top/campaign-filter/byids/campaigns/46167</string>
+
+    <!-- Powered by OBA URL -->
+    <string name="powered_by_oba_url">http://onebusaway.org</string>
+
+    <!-- Open-source link for Github project -->
+    <string name="open_source_github">https://github.com/OneBusAway/onebusaway-android</string>
+
+    <!-- StopInfo project (see #103) -->
+    <string name="stop_info_url_path">busstops</string>
+
+    <!-- Google Play Store Listing prefix -->
+    <string name="google_play_listing_prefix">https://play.google.com/store/apps/details?id=%1s</string>
+
+    <!-- Oba Analytics Messages -->
+    <string name="analytics_action_configured_region">configured_region</string>
+    <string name="analytics_action_configured_region_auto">configured_region_auto</string>
+    <string name="analytics_action_button_press">button_press</string>
+    <string name="analytics_action_set_region">set_region</string>
+    <string name="analytics_action_trip_plan">trip_plan</string>
+    <string name="analytics_action_edit_field">edit_field</string>
+    <string name="analytics_action_edit_general">general</string>
+    <string name="analytics_action_switch">app_switch</string>
+    <string name="analytics_action_problem">report_problem</string>
+    <string name="analytics_action_touch_exploration">touch_exploration_on</string>
+    <string name="analytics_action_customer_service">customer_service</string>
+    <string name="analytics_action_service_alerts">service_alerts</string>
+    <string name="analytics_action_layer_bikeshare">layer_bikeshare</string>
+    <string name="analytics_action_bike_marker_clicked">bike_marker_clicked</string>
+
+    <string name="analytics_label_region">API Region:\u0020</string>
+    <string name="analytics_label_region_auto">Set Region Automatically:\u0020</string>
+    <string name="analytics_label_button_press">Clicked load more arrivals button</string>
+    <string name="analytics_label_sort_by_eta_arrival">Clicked sort by ETA from
+        ArrivalsListFragment
+    </string>
+    <string name="analytics_label_sort_by_route_arrival">Clicked sort by route from
+        ArrivalsListFragment
+    </string>
+    <string name="analytics_label_sort_by_name_stops">Clicked sort by name from
+        MyStarredStopsFragment
+    </string>
+    <string name="analytics_label_sort_by_mfu_stops">Clicked sort by most frequently used from
+        MyStarredStopsFragment
+    </string>
+    <string name="analytics_label_sort_by_name_reminder">Clicked sort by name from
+        MyRemindersFragment
+    </string>
+    <string name="analytics_label_sort_by_departure_time_reminder">Clicked sort by departure time from
+        MyRemindersFragment
+    </string>
+    <string name="analytics_label_show_arrivals_in_header">Clicked show arrivals in header
+    </string>
+    <string name="analytics_label_hide_arrivals_in_header">Clicked hide arrivals in header
+    </string>
+    <string name="analytics_label_trip_plan">Planned a Trip</string>
+    <string name="analytics_label_button_press_star">Clicked Starred Stops Link</string>
+    <string name="analytics_label_button_press_nearby">Clicked Nearby Item Link</string>
+    <string name="analytics_label_button_press_reminders">Clicked My Reminders Link</string>
+    <string name="analytics_label_button_press_trip_plan">Clicked Trip Plan Link</string>
+    <string name="analytics_label_button_press_settings">Clicked Settings Link</string>
+    <string name="analytics_label_button_press_tutorial">Clicked Tutorial Link</string>
+    <string name="analytics_label_button_press_donate">Clicked Donate Link</string>
+    <string name="analytics_label_button_press_powered_by_oba">Clicked Powered By Oba Link</string>
+    <string name="analytics_label_button_press_about">Clicked About</string>
+    <string name="analytics_label_button_press_help">Clicked Help Link</string>
+    <string name="analytics_label_button_press_feedback">Clicked Send Feedback</string>
+    <string name="analytics_label_button_press_open_source">Visit us on GitHub</string>
+    <string name="analytics_label_button_press_stopinfo">Loaded StopInfo from\u0020</string>
+    <string name="analytics_label_button_press_stop_details">Clicked Stop Details</string>
+    <string name="analytics_label_button_press_map_icon">Clicked MapStopIcon</string>
+    <string name="analytics_label_button_press_search_box">Search box selected</string>
+    <string name="analytics_label_button_press_search_button">Search button clicked</string>
+    <string name="analytics_label_button_press_location">Clicked My Location Button</string>
+    <string name="analytics_label_button_press_experimental_on">Turned on Experimental Regions
+    </string>
+    <string name="analytics_label_button_press_experimental_off">Turned off Experimental Regions
+    </string>
+    <string name="analytics_label_experimental">Show Experimental Regions:\u0020</string>
+    <string name="analytics_label_button_press_auto">Set region automatically</string>
+    <string name="analytics_label_button_press_manual">Set region manually</string>
+    <string name="analytics_label_button_press_save_preference">Clicked Save to Storage</string>
+    <string name="analytics_label_button_press_restore_preference">Clicked Restore from Storage</string>
+    <string name="analytics_label_edit_field">Edited Bookmark</string>
+    <string name="analytics_label_edit_field_bookmark_delete">Edited Bookmark Group Deleted</string>
+    <string name="analytics_label_set_region">Set Region:\u0020</string>
+    <string name="analytics_label_app_switch">Loaded Twitter via Web</string>
+    <string name="analytics_label_report_problem">Reported Problem</string>
+    <string name="analytics_label_report_stop_problem">Reported Stop Problem</string>
+    <string name="analytics_label_report_trip_problem">Reported Trip Problem</string>
+    <string name="analytics_label_stop_problem">Stop Problem</string>
+    <string name="analytics_label_trip_problem">Trip Problem</string>
+    <string name="analytics_label_app_feedback">Send Email Link</string>
+    <string name="analytics_label_app_feedback_otp">Reported OTP problem</string>
+    <string name="analytics_label_app_feedback_without_location">Send Email Link without location</string>
+    <string name="analytics_label_customer_service">Customer Service</string>
+    <string name="analytics_label_customer_service_web">Open web page</string>
+    <string name="analytics_label_customer_service_email">Send email</string>
+    <string name="analytics_label_customer_service_email_without_location">Send email without location</string>
+    <string name="analytics_label_customer_service_phone">Make phone call</string>
+    <string name="analytics_label_idea_scale">IdeaScale</string>
+    <string name="analytics_label_talkback">Loaded view:\u0020</string>
+    <string name="analytics_label_custom_url">Custom URL</string>
+    <string name="analytics_label_star_route">Starred route</string>
+    <string name="analytics_label_unstar_route">Unstarred route</string>
+    <string name="analytics_label_left_hand_preference">Set Left hand mode:\u0020</string>
+    <string name="analytics_label_analytic_preference">Set Send anonymous usage data:\u0020</string>
+    <string name="analytics_label_show_departed_bus_preference">Show Departed Buses:\u0020</string>
+    <string name="analytics_label_arrival_info_style">Set Arrival info style:\u0020</string>
+    <string name="analytics_label_service_alerts">Clicked Service Alerts from:\u0020</string>
+    <string name="analytics_label_bikeshare_activated">Bikeshare layer activated</string>
+    <string name="analytics_label_bikeshare_deactivated">Bikeshare layer deactivated</string>
+    <string name="analytics_label_bike_station_marker_clicked">Pressed bike station marker</string>
+    <string name="analytics_label_floating_bike_marker_clicked">Pressed floating bike marker</string>
+    <string name="analytics_label_bike_station_balloon_clicked">Pressed bike station balloon</string>
+    <string name="analytics_label_floating_bike_balloon_clicked">Pressed floating bike balloon</string>
+
+    <!-- Analytics for social -->
+    <string name="analytics_label_button_press_social_sign_in">Clicked Social Sign In</string>
+    <string name="analytics_label_button_press_social_profile">Clicked Social Profile</string>
+    <string name="analytics_label_button_press_social_popular">Clicked Social Popular Feed</string>
+    <string name="analytics_label_button_press_social_pins">Clicked Social Pins</string>
+    <string name="analytics_label_button_press_social_activity_feed">Clicked Social Activity Feed</string>
+    <string name="analytics_label_button_press_social_settings">Clicked Social Settings</string>
+    <string name="analytics_label_button_press_social_stop">Clicked Social Stop Arrivals Header</string>
+    <string name="analytics_label_button_press_social_route_options">Clicked Social Route Options</string>
+    <string name="analytics_label_button_press_social_route_style_b">Clicked Social Route Style B Card</string>
+
+    <!-- Analytics for payment -->
+    <string name="analytics_label_button_press_pay_fare_download_app">Clicked Pay Fare Download App</string>
+    <string name="analytics_label_button_press_pay_fare_open_app">Clicked Pay Fare Open App</string>
+
+    <!-- General strings -->
+    <string name="http_prefix">http://</string>
+
+    <!-- Problem reporting additions -->
+    <string name="ri_append_start">\n\n---------------------\n</string>
+    <string name="ri_append_gtfs_stop_id">gtfs_stop_id=%1$s;\n</string>
+    <string name="ri_append_agency_name">agency_name=%1$s;\n</string>
+    <string name="ri_append_stop_name">stop_name=%1$s;\n</string>
+    <string name="ri_append_block_id">block_id=%1$s;\n</string>
+    <string name="ri_append_trip_id">trip_id=%1$s;\n</string>
+    <string name="ri_append_route_id">route_id=%1$s;\n</string>
+    <string name="ri_append_route_display_name">route_display_name=%1$s;\n</string>
+    <string name="ri_append_trip_name">trip_headsign=%1$s;\n</string>
+    <string name="ri_append_vehicle_id">vehicle_id=%1$s;\n</string>
+    <string name="ri_append_vehicle_location">vehicle_location=%1$s;\n</string>
+    <string name="ri_append_service_date">service_date=%1$s;\n</string>
+    <string name="ri_append_predicted">predicted=%1$b;\n</string>
+    <string name="ri_append_arrival_time">stop_arrival_time=%1$s;\n</string>
+    <string name="ri_append_departure_time">stop_departure_time=%1$s;\n</string>
+    <string name="ri_append_schedule_deviation">schedule_deviation=%1$s min;\n</string>
+    <string name="ri_append_schedule_deviation_early">schedule_deviation=%1$s min early;\n</string>
+    <string name="ri_append_schedule_deviation_late">schedule_deviation=%1$s min late;\n</string>
+    <string name="ri_static_user_name">OneBusAway</string>
+    <string name="ri_static_user_last_name">User</string>
+    <string name="ri_static_user_email">issue-report@onebusaway.org</string>
+    <string name="ri_static_user_phone"></string>
+    <string name="ri_selected_service_stop">stop</string>
+    <string name="ri_selected_service_trip">trip</string>
+    <string name="ri_app_feedback_email">android-app@onebusaway.org</string>
+
+    <string name="arrival_list_stop_directions">\u0020(%1$s)</string>
+    <string name="sobi_deep_link_floating_bike_url">http://app.socialbicycles.com/map?bike_id=</string>
+    <string name="sobi_deep_link_bike_station_url">https://app.socialbicycles.com/map?hub_id=</string>
+
+    <string name="traverse_mode_bicycle_rent">BICYCLE_RENT</string>
+
+</resources>

@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+    <string name="app_name">KISS launcher</string>
+    <string name="activity_setting">KISS settings</string>
+    <string name="ui_search_hint">Search apps, contacts, …</string>
+    <string name="ui_item_search">Search %1$s for “%2$s”</string>
+    <string name="ui_item_visit">Visit “%1$s”</string>
+    <string name="ui_item_phone">Call “%s”</string>
+    <string name="ui_item_contact_hint_message">Message</string>
+    <string name="ui_item_contact_hint_call">Call</string>
+
+    <string name="title_ui">User interface</string>
+    <string name="title_history">History settings</string>
+    <string name="title_providers">Providers selection</string>
+    <string name="title_advanced">Advanced settings</string>
+    <string name="menu_settings">Device settings</string>
+
+    <string name="ui_empty_1">Start searching for anything</string>
+    <string name="ui_empty_1_sub">Apps, contacts, settings, …</string>
+    <string name="ui_empty_2">Always see your history</string>
+    <string name="ui_empty_2_sub">For fast access</string>
+    <string name="ui_empty_3">Quick access to most used apps</string>
+    <string name="ui_empty_3_sub">KISS launcher learns from your habits</string>
+
+    <string name="toggles_name">Toggles (Wi-Fi, Bluetooth, …)</string>
+    <string name="toggles_on">%s activated</string>
+    <string name="toggles_off">%s deactivated</string>
+
+    <string name="contacts_name">Contacts</string>
+
+    <string name="search_name">Web Search</string>
+
+    <string name="settings_name">Device Settings</string>
+
+    <string name="phone_name">Phone numbers</string>
+
+    <string name="shortcuts_name">Shortcuts</string>
+
+    <string name="stub_application" translatable="false">App name</string>
+    <string name="stub_contact" translatable="false">Contact name</string>
+    <string name="stub_contact_phone" translatable="false">+1 330 1234 5678</string>
+    <string name="stub_setting" translatable="false">Setting name</string>
+    <string name="stub_toggle" translatable="false">Setting to toggle</string>
+    <string name="stub_phone" translatable="false">Call +1 330 1234 5678</string>
+    <string name="stub_app_tag">Tag example</string>
+    <string name="main_menu">Menu</string>
+    <string name="main_clear">Clear search bar</string>
+    <string name="main_kiss">Display favorites and app list</string>
+    <string name="main_kiss_back">Display history</string>
+    <string name="reset_name">Reset history</string>
+    <string name="reset_excluded_apps_name">Reset excluded app list</string>
+    <string name="reset_excluded_apps_warn">Do you really want to reset your excluded app list?</string>
+    <string name="ui_excluded_apps">View or edit your excluded apps</string>
+    <string name="ui_excluded_apps_dialog_title">Deselect the apps you would like to include</string>
+    <string name="ui_excluded_apps_not_found">No apps have been excluded</string>
+    <string name="reset_warn">Do you really want to reset your history?</string>
+    <string name="reset_favorites_name">Reset your list of favorites</string>
+    <string name="reset_favorites_warn">Do you really want to reset your favorites?</string>
+    <string name="keyboard_name">Display keyboard on start</string>
+    <string name="keyboard_workaround_name">Keyboard suggestions fix</string>
+    <string name="keyboard_workaround_desc">Prevent broken soft-keyboards (like SwiftKey™) from showing suggestions</string>
+    <string name="history_hide_desc">Hide history and intro screen, enable widgets</string>
+    <string name="history_hide_name">Minimalistic UI</string>
+    <string name="history_onclick_name">Show history on touch</string>
+    <string name="portrait_title">Force portrait mode</string>
+    <string name="lwp_touch">Send touch events to wallpaper</string>
+    <string name="lwp_drag">Emulate drag event for wallpaper</string>
+    <string name="lwp_drag_desc">Send multiple touch events</string>
+    <string name="wp_drag_animate">Scroll wallpaper</string>
+    <string name="wp_drag_animate_desc">Drag horizontally to scroll wallpaper</string>
+    <string name="icons_hide_main">Hide app icons</string>
+    <string name="icons_hide_desc">Useful on slow devices</string>
+    <string name="search_providers_title">Select web search providers</string>
+    <string name="search_providers_delete">Delete search providers</string>
+    <string name="custom_search_provider">Add search provider</string>
+    <string name="search_provider_reset">Reset search providers</string>
+    <string name="search_provider_reset_desc">Would you like to reset the list of search providers?</string>
+    <string name="search_provider_reset_done_desc">The search providers have been reset</string>
+    <string name="search_provider_name">Provider name</string>
+    <string name="search_provider_url" translatable="false">https://p.com/?q={q}</string>
+    <string name="search_provider_added">The search provider was added.</string>
+    <string name="search_provider_deleted">The search provider(s) was deleted.</string>
+    <string name="search_provider_error_char">Please, do not use the character |</string>
+    <string name="search_provider_error_placeholder">Please, use {q} for the query placeholder</string>
+    <string name="search_provider_error_url">Please, use a valid URL</string>
+    <string name="search_provider_error_exists">A provider with this name already exists</string>
+
+
+    <string name="history_mode_name">History mode</string>
+    <string name="history_mode_desc">Select the way that the history is populated</string>
+    <string name="root_mode_desc">If available use it to hibernate apps</string>
+    <string name="root_mode_name">Root mode</string>
+    <string name="root_mode_error">Unable to gain root privileges.</string>
+    <string name="freeze_history_name">Freeze history</string>
+    <string name="freeze_history_warn">Are you sure you want to freeze history and disable all further updates? Your history will not change anymore.</string>
+
+    <string name="icons_pack_name">Theme icons (ADW.Launcher theme)</string>
+    <string name="icons_pack_default_name">System icons</string>
+
+    <string name="alias_phone">dial,call,phone</string>
+    <string name="alias_contacts">contacts,people,relations</string>
+    <string name="alias_web">internet,web,browser</string>
+    <string name="alias_mail">mail,email,e-mail</string>
+    <string name="alias_market">market,store,app center</string>
+    <string name="alias_clock">clock,alarm,timer,stopwatch</string>
+    <string name="alias_messaging">text message,compose,SMS,MMS,messaging</string>
+    <string name="settings_prefix">"Setting: "</string>
+    <string name="toggles_prefix">"Toggle: "</string>
+    <string name="settings_airplane">Airplane mode</string>
+    <string name="settings_device_info">Device info</string>
+    <string name="settings_applications">Apps</string>
+    <string name="settings_connectivity">Connectivity</string>
+    <string name="settings_battery">Battery</string>
+    <string name="settings_nfc">NFC</string>
+    <string name="settings_tethering">Tethering</string>
+    <string name="settings_storage">Storage</string>
+    <string name="settings_dev">Developer settings</string>
+    <string name="settings_accessibility">Accessibility</string>
+    <string name="settings_sound">Sound and volume</string>
+    <string name="settings_display">Display</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_silent">Silent</string>
+    <string name="toggle_data">Network data</string>
+    <string name="toggle_torch">Torch</string>
+    <string name="toggle_sync">Synchronization</string>
+    <string name="toggle_autorotate">Autorotate</string>
+    <string name="menu_wallpaper">Update wallpaper</string>
+    <string name="application_not_found">Whoops… unable to launch that app.</string>
+    <string name="history_erased">History erased.</string>
+    <string name="favorites_erased">Favorites erased.</string>
+    <string name="menu_favorites_add">Add to favorites</string>
+    <string name="menu_tags_edit">Add or edit tags</string>
+    <string name="tags_add_title">Add space separated tags</string>
+    <string name="tags_confirmation_added">Tag set</string>
+    <string name="tags_visible">Show app tags</string>
+    <string name="excluded_app_list_erased">List of excluded apps erased.</string>
+    <string name="excluded_app_list_added">App excluded from KISS. Reset through the KISS settings</string>
+
+    <string name="removed_item">Removed</string>
+    <string name="menu_remove">Remove from history</string>
+    <string name="menu_exclude">Exclude app from KISS</string>
+    <string name="menu_app_details">App info</string>
+    <string name="menu_app_uninstall">Uninstall</string>
+    <string name="menu_app_hibernate">Hibernate</string>
+    <string name="menu_shortcut_remove">Remove shortcut</string>
+
+    <string name="toast_hibernate_completed">%s hibernated, relaunch to awake.</string>
+    <string name="toast_hibernate_error">%s not hibernated.</string>
+    <string name="menu_contact_copy_phone">Copy phone number</string>
+    <string name="theme_name">Theme interface</string>
+    <string name="menu_phone_create">Create contact</string>
+
+    <string name="toast_favorites_added">%s was added to favorites</string>
+
+    <string name="order_apps_name">App list sort order</string>
+    <string name="enable_sms">Show incoming SMSes in history</string>
+    <string name="enable_phone">Show incoming calls in history</string>
+    <string name="enable_app">Show newly installed apps in history</string>
+    <string name="enable_favorites_bar">Show favorites above search bar</string>
+    <string name="exclude_favorites">Exclude favorites from history</string>
+    <string name="favorites_hide">Hide Favorites Bar</string>
+    <string name="pref_hide_navbar">Hide navbar</string>
+    <string name="pref_hide_navbar_desc">Hide navigation bar and enable immersive mode for KitKat (4.4) and beyond</string>
+    <string name="pref_hide_statusbar">Hide status bar</string>
+    <string name="pref_hide_statusbar_desc">Hide notification bar and enable immersive mode for KitKat (4.4) and beyond</string>
+    <string name="shortcut_added">Shortcut added to KISS.</string>
+
+    <string name="restart_desc">Fix theme issues and new contacts not displaying</string>
+    <string name="restart_name">Restart KISS</string>
+    <string name="restart_warn">Do you really want to restart KISS? If KISS is not your default launcher the app will simply quit.</string>
+
+    <string name="default_launcher_title">Change Default Launcher</string>
+    <string name="default_launcher_warn">After selecting the Default Launcher, you\'ll be sent to its home screen. Are you sure you\'d like to proceed?\n\nNote: If you don\'t see the \"Always\" option, press the \"Home\" button after selecting your desired launcher.</string>
+
+    <string name="items_title">%d items</string>
+    <string name="alternate_history_inputs">Alternate history inputs</string>
+    <string name="keyboard_options">Keyboard options</string>
+    <string name="misc">Misc</string>
+    <string name="toast_favorites_removed">%s was removed from favorites</string>
+    <string name="menu_favorites_remove">Remove favorite</string>
+    <string name="share">Share to…</string>
+    <string name="number_of_display_items">Max number of results in search and history</string>
+
+    <string name="main_color">Primary color</string>
+    <string name="notification_bar_color">Notification bar color</string>
+
+    <string name="color_transparent_dark">Transparent Dark</string>
+    <string name="color_transparent_white">Transparent White</string>
+    <string name="color_transparent">Transparent</string>
+
+
+    <!-- Default title for color picker dialog [CHAR LIMIT=30] -->
+    <string name="color_picker_default_title">Select a Color</string>
+    <!-- Content description for a color square. -->
+    <string name="color_swatch_description">Color <xliff:g example="14" id="color_index">%1$d</xliff:g></string>
+    <!-- Content description for a selected color square. -->
+    <string name="color_swatch_description_selected">Color <xliff:g example="14" id="color_index">%1$d</xliff:g> selected</string>
+
+    <string name="transparent_search_bar">Transparent search bar</string>
+    <string name="transparent_favorites_bar">Transparent favorites bar</string>
+
+    <string name="large_search_bar">Large search bar</string>
+    <!-- Widget strings, preference id should not be translated -->
+    <string name="menu_widget_add">(BETA) Add widget</string>
+    <string name="menu_widget_remove">Remove widget</string>
+    <string name="rate_the_app">Rate the app</string>
+    <string name="history_settings_summary">Reset your history, exclude apps, …</string>
+    <string name="user_interface_summary">Themes, transparency and colors</string>
+    <string name="providers_summary">Disable providers, add custom search engines, …</string>
+    <string name="title_ux">User experience</string>
+    <string name="user_experience_summary">Minimalistic UI, keyboard settings, …</string>
+    <string name="title_favorites">Favorites settings</string>
+    <string name="history_favorites_summary">Reset your favorites, remove favorites bar, …</string>
+    <string name="title_wallpaper">Live wallpaper interactions</string>
+    <string name="freeze_history_summary">Keep history as-is until unchecked</string>
+    <string name="enable_favorites_bar_summary_off">Only display favorites when pressing the KISS icon</string>
+    <string name="enable_favorites_bar_summary_on">Display favorites above the search bar</string>
+    <string name="get_help">Get help!</string>
+
+</resources>

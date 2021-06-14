@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Moez Bhatti <moez.bhatti@gmail.com>
+  ~
+  ~ This file is part of QKSMS.
+  ~
+  ~ QKSMS is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ QKSMS is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with QKSMS.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:id="@+id/inbox"
+        style="@style/DrawerRow">
+
+        <ImageView
+            android:id="@+id/inboxIcon"
+            style="@style/DrawerIcon"
+            android:src="@drawable/ic_inbox_black_24dp"
+            tools:tint="@color/tools_theme" />
+
+        <common.widget.QkTextView
+            style="@style/DrawerText"
+            android:text="@string/drawer_inbox" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/archived"
+        style="@style/DrawerRow">
+
+        <ImageView
+            android:id="@+id/archivedIcon"
+            style="@style/DrawerIcon"
+            android:src="@drawable/ic_archive_black_24dp"
+            tools:tint="@color/textSecondary" />
+
+        <common.widget.QkTextView
+            style="@style/DrawerText"
+            android:text="@string/drawer_archived" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/scheduled"
+        style="@style/DrawerRow"
+        android:alpha="0.5">
+
+        <ImageView
+            android:id="@+id/scheduledIcon"
+            style="@style/DrawerIcon"
+            android:src="@drawable/ic_event_black_24dp"
+            tools:tint="@color/textSecondary" />
+
+        <common.widget.QkTextView
+            style="@style/DrawerText"
+            android:text="@string/drawer_scheduled" />
+
+    </LinearLayout>
+
+    <common.widget.Separator
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp" />
+
+    <common.widget.QkTextView
+        style="@style/TextSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/drawer_more" />
+
+    <LinearLayout
+        android:id="@+id/settings"
+        style="@style/DrawerRow">
+
+        <ImageView
+            android:id="@+id/settingsIcon"
+            style="@style/DrawerIcon"
+            android:src="@drawable/ic_settings_black_24dp"
+            tools:tint="@color/textSecondary" />
+
+        <common.widget.QkTextView
+            style="@style/DrawerText"
+            android:text="@string/drawer_settings" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/plus"
+        style="@style/DrawerRow">
+
+        <ImageView
+            android:id="@+id/plusIcon"
+            style="@style/DrawerIcon"
+            android:src="@drawable/ic_star_black_24dp"
+            tools:tint="@color/textSecondary" />
+
+        <common.widget.QkTextView
+            style="@style/DrawerText"
+            android:text="@string/drawer_plus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/help"
+        style="@style/DrawerRow">
+
+        <ImageView
+            android:id="@+id/helpIcon"
+            style="@style/DrawerIcon"
+            android:src="@drawable/ic_help_black_24dp"
+            tools:tint="@color/textSecondary" />
+
+        <common.widget.QkTextView
+            style="@style/DrawerText"
+            android:text="@string/drawer_help" />
+
+    </LinearLayout>
+
+</LinearLayout>

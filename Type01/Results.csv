@@ -1,0 +1,10 @@
+App	Lint(BUG)	ARPDroid	RevDroid	Lint(FIX)	ARPDroid	RevDroid	BUG-URL	FIX-URL
+apps-android-commons	-	External Permission	Location Permission	-	FP	FP	https://github.com/commons-app/apps-android-commons/tree/3bd3f170f775e9034a1747dd9e9d63482b8c4f34	https://github.com/commons-app/apps-android-commons/tree/1530ddc969453451217f0240c5822acc35818d6a
+KISS	-	Phone Permission	Phone Permission	-	FP	FP	https://github.com/Neamar/KISS/tree/75d93b21e6ecefa7b28a3464573dc1fe2f250be3	https://github.com/Neamar/KISS/tree/d96d20f41d694e5106bd075e50671b8ab8c3443b
+onebusaway-android	-	x	x	-			https://github.com/OneBusAway/onebusaway-android/tree/ee45830c6571ee769ff06168e54212811a8c3ac0	https://github.com/OneBusAway/onebusaway-android/tree/7cb3a97929c2afc0c9e537ee061cbe24c8308004
+WiFiAnalyzer	-	x	x	-			https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer/tree/f8887cfc4269db7a046de821c6d33cd06cd8234c	https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer/tree/ea6ac4503783067b3ce94275e4219d250707fd0e
+Subsonic	-	Phone Permission	Phone Permission	-	FP	FP	https://github.com/daneren2005/Subsonic/tree/d8c5a9f8b4b58489e113c637d358ba64df899a42	https://github.com/daneren2005/Subsonic/tree/d3cd581edd08ba9811aa4f87362ea81a02fe11db
+freeotp-android	-	Camera Permission	x	-	FP		https://github.com/freeotp/freeotp-android/tree/ef9a61881edf789121d37854739ad21a7fcd37a8	https://github.com/freeotp/freeotp-android/tree/d9a89462209eece876c64bb144e60861bcdfbc30
+k-9	-	x	x	-			https://github.com/k9mail/k-9/tree/72a664458e6008eb96b8b9622fb0e117ddc15f62	https://github.com/k9mail/k-9/tree/0c911dbac31e97ef068d87e411a78ba7b1f48e41
+Anki-Droid	-	External Permission	x	-	FP		https://github.com/ankidroid/Anki-Android/tree/fe148e0e2752d5c65a091da96c092ae3a06857a4	https://github.com/timrae/Anki-Android/tree/a5eb3889ad4576bf748bb0f30adbe7840d3704d4
+qksms	-	Sms & Phone Permission	Sms & Phone Permission	-	FP	FP	https://github.com/moezbhatti/qksms/tree/9e1a9a2375f40af93e0bd4293102fce9407b50d6	https://github.com/moezbhatti/qksms/tree/e6e55e9113d242fe4797f38739a6eba3fa92eb59

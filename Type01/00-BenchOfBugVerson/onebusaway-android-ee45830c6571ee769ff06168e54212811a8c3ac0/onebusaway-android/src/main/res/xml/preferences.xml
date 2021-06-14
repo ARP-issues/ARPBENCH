@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010-2017 Brian Ferris (bdferris@onebusaway.org),
+    Paul Watts (paulcwatts@gmail.com),
+    University of South Florida (sjbarbeau@gmail.com),
+    Microsoft Corporation
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="preferences_root">
+    <PreferenceCategory android:title="@string/preferences_category_location"
+                        android:key="@string/preferences_category_location">
+    <Preference
+                android:key="@string/preference_key_region"
+                android:title="@string/preferences_region_title"/>
+        <CheckBoxPreference
+                android:key="@string/preference_key_auto_select_region"
+                android:title="@string/preferences_auto_select_region_title"
+                android:summary="@string/preferences_auto_select_region_summary"
+                android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_category_display">
+        <CheckBoxPreference
+                android:key="@string/preference_key_show_negative_arrivals"
+                android:title="@string/preferences_show_negative_arrivals_title"
+                android:summary="@string/preferences_show_negative_arrivals_summary"
+                android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:key="@string/preference_key_show_zoom_controls"
+            android:title="@string/preferences_show_zoom_controls_title"
+            android:summary="@string/preferences_show_zoom_controls_summary"
+            android:defaultValue="false"/>
+
+        <CheckBoxPreference
+                android:key="@string/preference_key_show_tutorial_screens"
+                android:title="@string/preferences_show_tutorial_screens_title"
+                android:summary="@string/preferences_show_tutorial_screens_summary"
+                android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="@string/preference_key_left_hand_mode"
+            android:title="@string/preferences_left_hand_mode_title"
+            android:summary="@string/preferences_left_hand_mode_summary"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+                android:key="@string/preference_key_show_header_arrivals"
+                android:title="@string/preferences_show_header_arrivals_title"
+                android:summary="@string/preferences_show_header_arrivals_summary"
+                android:defaultValue="false"/>
+        <ListPreference
+                android:key="@string/preference_key_preferred_units"
+                android:title="@string/preferences_preferred_units_title"
+                android:entries="@array/preferred_units_options"
+                android:entryValues="@array/preferred_units_options"
+                android:defaultValue="@string/preferences_preferred_units_option_automatic">
+        </ListPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:key="@string/preference_key_notifications"
+            android:title="@string/preferences_category_notifications">
+        <RingtonePreference
+                android:showDefault="true"
+                android:showSilent="true"
+                android:key="@string/preference_key_notification_sound"
+                android:title="@string/preferences_preferred_sound_title"
+                android:summary="@string/preferences_preferred_sound_summary"
+                android:ringtoneType="notification" />
+        <CheckBoxPreference
+                android:key="@string/preference_key_preference_vibrate_allowed"
+                android:title="@string/preferences_preferred_vibration_title"
+                android:summary="@string/preferences_preferred_vibration_summary"
+                android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="@string/preference_key_trip_plan_notifications"
+            android:title="@string/preferences_trip_plan_notifications_title"
+            android:summary="@string/preferences_trip_plan_notifications_summary"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_category_backup">
+        <org.onebusaway.android.io.backup.SavePreference
+                android:title="@string/preferences_save_title"
+                android:summary="@string/preferences_save_summary"/>
+        <org.onebusaway.android.io.backup.RestorePreference
+                android:title="@string/preferences_restore_title"
+                android:summary="@string/preferences_restore_summary"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_category_social"
+            android:key="@string/preference_key_social_category">
+        <PreferenceScreen
+                android:key="@string/preference_key_social"
+                android:title="@string/preferences_screen_social_title"
+                android:summary="@string/preferences_screen_social_summary_signed_out"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_category_advanced">
+        <PreferenceScreen
+                android:title="@string/preferences_category_advanced"
+                android:summary="@string/preferences_screen_advanced_summary">
+            <PreferenceCategory android:title="@string/preferences_category_advanced"
+                                android:key="@string/preferences_category_advanced">
+                <org.onebusaway.android.region.ExperimentalRegionsPreference
+                        android:key="@string/preference_key_experimental_regions"
+                        android:title="@string/preferences_experimental_regions_title"
+                        android:summary="@string/preferences_experimental_regions_summary"/>
+                <EditTextPreference
+                        android:title="@string/preferences_oba_api_servername_title"
+                        android:summary="@string/preferences_oba_api_servername_summary"
+                        android:inputType="text|textNoSuggestions"
+                        android:hint="@string/preferences_oba_api_servername_hint"
+                        android:key="@string/preference_key_oba_api_url"/>
+                <EditTextPreference
+                        android:title="@string/preferences_otp_api_servername_title"
+                        android:summary="@string/preferences_otp_api_servername_summary"
+                        android:inputType="text|textNoSuggestions"
+                        android:hint="@string/preferences_otp_api_servername_hint"
+                        android:key="@string/preference_key_otp_api_url"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_category_about"
+                        android:key="@string/preferences_category_about">
+        <CheckBoxPreference
+            android:key="@string/preferences_key_analytics"
+            android:title="@string/preferences_analytics_title"
+            android:summary="@string/preferences_analytics_summary"
+            android:defaultValue="true"/>
+        <Preference
+                android:key="@string/preference_key_tutorial"
+                android:title="@string/preferences_tutorial_title"
+                android:summary="@string/preferences_tutorial_summary"/>
+        <Preference
+            android:key="@string/preferences_key_donate"
+            android:title="@string/preferences_donate_title"
+            android:summary="@string/preferences_donate_summary"/>
+        <Preference
+                android:key="@string/preferences_key_powered_by_oba"
+                android:title="@string/preferences_powered_by_oba_title"
+                android:summary="@string/preferences_powered_by_oba_summary"/>
+        <Preference
+                android:key="@string/preferences_key_about"
+                android:title="@string/preferences_about_title"
+                android:summary="@string/preferences_about_summary"/>
+    </PreferenceCategory>
+</PreferenceScreen>

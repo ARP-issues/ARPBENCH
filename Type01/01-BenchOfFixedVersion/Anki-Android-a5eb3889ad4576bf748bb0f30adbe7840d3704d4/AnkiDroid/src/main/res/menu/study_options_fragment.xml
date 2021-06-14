@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ankidroid="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/action_undo"
+        android:enabled="true"
+        android:icon="@drawable/ic_undo_white_24dp"
+        android:title="@string/undo"
+        ankidroid:showAsAction="always"
+        android:visibility = "gone" />
+    <item
+        android:id="@+id/action_add_note_from_study_options"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="@string/menu_add"
+        ankidroid:showAsAction="always"
+        android:visible="false" />
+</menu>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="App_Theme_White" parent="Theme_White">
+        <item name="currentDeckBackground">@drawable/item_background_selected</item>
+    </style>
+    <style name="App_Theme_Dark" parent="Theme_Dark">
+        <item name="currentDeckBackground">@drawable/item_background_selected_night</item>
+    </style>
+</resources>

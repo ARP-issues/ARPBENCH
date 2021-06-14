@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme_Base_Custom_Dark" parent="@style/Theme.AppCompat"/>
+    <!-- Dark theme -->
+    <style name="Theme_Dark" parent="Theme_Base_Custom_Dark">
+        <item name="colorPrimary">@color/white_background_night</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/material_light_blue_700</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="actionBarTextColor">@color/white</item>
+        <!-- Action bar styles -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionBarThemeRef">@style/ActionBarDark</item>
+        <item name="actionBarPopupThemeRef">@style/ActionBar.Popup.Dark</item>
+        <!-- Deck list colors and divider -->
+        <item name="currentDeckBackground">@drawable/item_background_selected_pre21_night</item>
+        <item name="dynDeckColor">@color/deckadapter_deck_name_dyn_night</item>
+        <item name="deckDivider">@drawable/divider_dark</item>
+        <item name="expandRef">@drawable/ic_chevron_right_white_24dp</item>
+        <item name="collapseRef">@drawable/ic_expand_more_white_24dp</item>
+        <!-- Reviewer colors -->
+        <item name="topBarColor">@color/theme_primary_light_inv</item>
+        <item name="maxTimerColor">@color/max_timer_night</item>
+        <item name="newCountColor">@color/new_count_night</item>
+        <item name="learnCountColor">@color/learn_count_night</item>
+        <item name="zeroCountColor">@color/zero_count_night</item>
+        <item name="reviewCountColor">@color/review_count_night</item>
+        <!-- Reviewer button drawables
+            Note: We can't use attributes inside a drawable, so necessary to have separate drawable for
+            each theme. See Android bug https://code.google.com/p/android/issues/detail?id=26251 -->
+        <item name="againButtonRef">@drawable/footer_button_again_dark</item>
+        <item name="hardButtonRef">@drawable/footer_button_hard_dark</item>
+        <item name="goodButtonRef">@drawable/footer_button_good_dark</item>
+        <item name="easyButtonRef">@drawable/footer_button_easy_dark</item>
+        <!-- Browser colors -->
+        <item name="suspendedColor">@color/material_grey_700</item>
+        <item name="markedColor">@color/material_deep_purple_400</item>
+        <!-- Images -->
+        <item name="navDrawerImage">@drawable/nav_drawer_logo_dark_theme</item>
+        <item name="attachFileImage">@drawable/ic_attachment_white_24dp</item>
+        <item name="upDownImage">@drawable/ic_import_export_white_24dp</item>
+        <item name="dialogErrorIcon">@drawable/ic_warning_white_36dp</item>
+        <item name="dialogSyncErrorIcon">@drawable/ic_sync_problem_white_36dp</item>
+        <item name="dialogSendIcon">@drawable/ic_send_white_36dp</item>
+        <!-- Navigation drawer colors -->
+        <item name="material_drawer_background">@color/material_drawer_dark_background</item>
+        <item name="material_drawer_primary_text">@color/material_drawer_dark_primary_text</item>
+        <item name="material_drawer_primary_icon">@color/material_drawer_dark_primary_icon</item>
+        <item name="material_drawer_secondary_text">@color/material_drawer_dark_secondary_text</item>
+        <item name="material_drawer_hint_text">@color/material_drawer_dark_hint_text</item>
+        <item name="material_drawer_divider">@color/material_drawer_dark_divider</item>
+        <item name="material_drawer_selected">@color/navdrawer_background_selected</item>
+        <item name="material_drawer_selected_text">@color/material_drawer_dark_selected_text</item>
+        <item name="material_drawer_header_selection_text">@color/material_drawer_dark_header_selection_text</item>
+    </style>
+
+
+    <!-- ActionBar -->
+    <style name="ActionBarDark" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Determines color of text and system icons (overflow etc.) in the action bar -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <!-- Legacy action bar  (used in Preferences with no explicit Toolbar) -->
+    <style name="LegacyActionBarDark" parent="App_Theme_Dark">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <!-- For all other action bar popups (except spinner dropdown in Lollipop) -->
+    <style name="ActionBar.Popup.Dark" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:drawSelectorOnTop">true</item>
+    </style>
+</resources>

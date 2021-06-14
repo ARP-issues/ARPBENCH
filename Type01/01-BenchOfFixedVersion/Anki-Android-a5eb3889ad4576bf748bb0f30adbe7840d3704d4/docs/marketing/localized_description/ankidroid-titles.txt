@@ -1,0 +1,29 @@
+AnkiDroid Flashcards
+ar: البطاقات التعليميةآنكيدرويد
+bg: AnkiDroid флашкарти
+ca: AnkiDroid fitxes per memoritzar
+cs: AnkiDroid kartičky
+de: AnkiDroid Karteikarten
+el: Κάρτες AnkiDroid
+es-AR: Tarjetas flash AnkiDroid
+es-ES: Tarjetas AnkiDroid
+fa: فلش کارتهای انکی دروید
+fi: AnkiDroid-muistikortit
+fr: AnkiDroid (Cartes mémoire)
+gl: Cartóns AnkiDroid
+hu: AnkiDroid szókártyák
+id: Kad imbas AnkiDroid
+ja: AnkiDroid 単語帳
+ko: AnkiDroid 플래시 카드
+nl: AnkiDroid flitskaarten
+pl: AnkiDroid - Fiszki
+ru: AnkiDroid флэш-карты
+sk: AnkiDroid kartičky
+sl: AnkiDroid pomnilne kartice
+sr: AnkiDroid флеш-картице
+sv-SE: AnkiDroid Flashkort
+th: บัตรคำ AnkiDroid
+tr: AnkiDroid Bilgi Kartları
+vi: Thẻ thông minh AnkiDroid
+zh-CN: AnkiDroid 记忆卡片
+zh-TW: AnkiDroid 抽認卡

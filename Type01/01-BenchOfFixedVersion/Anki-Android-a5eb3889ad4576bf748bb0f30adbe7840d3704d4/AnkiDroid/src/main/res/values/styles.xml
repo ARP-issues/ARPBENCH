@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App themes -->
+    <style name="App_Theme_White" parent="Theme_White"/>
+    <style name="App_Theme_Dark" parent="Theme_Dark"/>
+    <!-- Theme for crash report dialog -->
+    <style name="Theme.CrashReportDialog" parent="@android:style/Theme.Dialog" />
+
+    <!-- Widget elements -->
+    <style name="Widget.ProgressBar.Horizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Widget.ProgressBar.BigWidget.Horizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_widgetbig_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Animation.Translucent" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@anim/translucent_exit</item>
+    </style>
+
+    <!-- Nav drawer style to set width specified by Material Design specification -->
+    <style name="NavDrawer">
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_marginRight">@dimen/nav_drawer_margin_offset</item>
+        <item name="android:maxWidth">280dp</item>
+    </style>
+
+    <style name="TextStyleMedium">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--  Material Design-style persistant footer button -->
+    <style name="FooterButtonLayout">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@string/font_fontFamily_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="FooterButtonNextTime">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12.5sp</item>
+    </style>
+    <style name="FooterButtonEaseText" parent="FooterButtonNextTime">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@string/font_fontFamily_medium</item>
+    </style>
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

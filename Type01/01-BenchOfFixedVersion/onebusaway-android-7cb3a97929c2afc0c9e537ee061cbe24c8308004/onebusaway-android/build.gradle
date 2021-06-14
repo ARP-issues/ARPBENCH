@@ -1,0 +1,468 @@
+/*
+ * Copyright (C) 2013-2017 University of South Florida (sjbarbeau@gmail.com),
+ * Microsoft Corporation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import groovy.swing.SwingBuilder
+import org.apache.tools.ant.filters.ConcatFilter
+
+apply plugin: 'com.android.application'
+
+repositories {
+    maven {
+        // OBA Releases - for comparator to sort alphanumeric routes
+        url "http://nexus.onebusaway.org/nexus/content/repositories/releases"
+    }
+    maven {
+        // for Amazon Maps
+        url uri('../.m2/repository')
+    }
+    maven {
+        // CUTR Releases
+        url "https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/snapshots"
+    }
+    maven {
+        // for testlib
+        url "http://dl.bintray.com/acrowntest/test"
+    }
+}
+
+// Custom properties for OBA
+ext {
+    compileSdkVersion = 28
+    playServicesVersion = "16.0.0"
+}
+
+android {
+    dexOptions {
+        preDexLibraries true
+    }
+    compileSdkVersion this.ext.compileSdkVersion
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 96
+        versionName "2.3.11"
+
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    /**
+     * brand - how the name, look, and feel of each OneBusAway-based app is presented
+     * platform - Google or Amazon (for Maps API v2 dependencies)
+     */
+    flavorDimensions "brand", "platform"
+
+    productFlavors {
+        google {
+            // Normal Google Play release - see src/google
+            dimension "platform"
+        }
+
+        amazon {
+            /**
+             * Amazon Fire Phone - see src/amazon
+             *
+             * NOTE: The "copyMapsApiV2Classes" task automatically copies the classes from
+             * src/google/java/org/onebusaway/android/map package to the
+             * src/amazon/java/org/onebusaway/android/map package (with the exception of
+             * ProprietaryMapHelpV2) when the project is built, and replaces the imports and
+             * GoogleMap class with the Amazon equivalents.  Therefore, the files in
+             * src/amazon/java/org/onebusaway/android/map should not be manually changed.
+             */
+            dimension "platform"
+        }
+
+        oba {
+            /**
+             * Original OneBusAway brand
+             *
+             * To allow this app to be distributed via Google Play, the applicationId MUST remain the
+             * original package name of the app before it was re-branded to OneBusAway:
+             * com.joulespersecond.seattlebusbot
+             */
+            dimension "brand"
+            applicationId "com.joulespersecond.seattlebusbot"
+            manifestPlaceholders = [databaseAuthority: "com.joulespersecond.oba"]
+            buildConfigField "int", "ARRIVAL_INFO_STYLE", "0" // Defined in BuildFlavorConstants
+            buildConfigField "boolean", "USE_FIXED_REGION", "false" // Supports multi-region
+            buildConfigField "String", "EMBEDDED_SOCIAL_API_KEY", "\"" + getEmbeddedSocialApiKey(name) + "\""
+            // Below fields need to be defined so flavor builds, but will not be used by app
+            buildConfigField "String", "FIXED_REGION_NAME", "null"
+            buildConfigField "String", "FIXED_REGION_OBA_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_SIRI_BASE_URL", "null"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT_SPAN", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON_SPAN", "0"
+            buildConfigField "String", "FIXED_REGION_LANG", "null"
+            buildConfigField "String", "FIXED_REGION_CONTACT_EMAIL", "null"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_DISCOVERY_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_REALTIME_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_SIRI_REALTIME_APIS", "false"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_EMBEDDEDSOCIAL", "false"
+            buildConfigField "String", "FIXED_REGION_TWITTER_URL", "null"
+            buildConfigField "String", "FIXED_REGION_STOP_INFO_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_JURISDICTION_ID", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_API_KEY", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OTP_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OTP_CONTACT_EMAIL", "null"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OTP_BIKESHARE", "false"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_ANDROID_APP_ID", "null"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_WARNING_TITLE", "null"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_WARNING_BODY", "null"
+        }
+
+        /**
+         * Rebranded versions of OBA using brand build flavors are below.  To add a new brand:
+         *  1. Add a new brand build flavor variant below
+         *  2. Create a new folder src/{brandName}/res (or copy from one of the samples - src/agencyX or src/agencyY)
+         *  3. Edit resource files in src/{brandName}/res subfolders with the brand information
+         *
+         *  For generating icons for the res/mipmap-* folders, see http://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+         */
+
+        agencyX {
+            // "Agency X" rebranding OneBusAway as another app - see src/agencyX/res for branded resources
+            dimension "brand"
+            applicationId "org.agencyx.android" // Unique listing of this brand on app store
+            manifestPlaceholders = [databaseAuthority: applicationId.toString() + '.provider']
+            buildConfigField "int", "ARRIVAL_INFO_STYLE", "0"  // Defined in BuildFlavorConstants
+            buildConfigField "boolean", "USE_FIXED_REGION", "false" // Supports multi-region
+            buildConfigField "String", "EMBEDDED_SOCIAL_API_KEY", "\"" + getEmbeddedSocialApiKey(name) + "\""
+            // Below fields need to be defined so flavor builds, but will not be used by app
+            buildConfigField "String", "FIXED_REGION_NAME", "null"
+            buildConfigField "String", "FIXED_REGION_OBA_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_SIRI_BASE_URL", "null"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT_SPAN", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON_SPAN", "0"
+            buildConfigField "String", "FIXED_REGION_LANG", "null"
+            buildConfigField "String", "FIXED_REGION_CONTACT_EMAIL", "null"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_DISCOVERY_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_REALTIME_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_SIRI_REALTIME_APIS", "false"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_EMBEDDEDSOCIAL", "false"
+            buildConfigField "String", "FIXED_REGION_TWITTER_URL", "null"
+            buildConfigField "String", "FIXED_REGION_STOP_INFO_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_JURISDICTION_ID", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_API_KEY", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OTP_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OTP_CONTACT_EMAIL", "null"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OTP_BIKESHARE", "false"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_ANDROID_APP_ID", "null"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_WARNING_TITLE", "null"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_WARNING_BODY", "null"
+        }
+
+        agencyY {
+            // "Agency Y" rebranding OneBusAway as another app - see src/agencyY/res for branded resources
+            dimension "brand"
+            applicationId "org.agencyy.android" // Unique listing of this brand on app store
+            manifestPlaceholders = [databaseAuthority: applicationId.toString() + '.provider']
+            buildConfigField "int", "ARRIVAL_INFO_STYLE", "1" // Defined in BuildFlavorConstants
+            buildConfigField "boolean", "USE_FIXED_REGION", "true" // Does not support multi-region
+            buildConfigField "String", "EMBEDDED_SOCIAL_API_KEY", "\"" + getEmbeddedSocialApiKey(name) + "\""
+            // Fixed region info that the app will use
+            buildConfigField "String", "FIXED_REGION_NAME", "\"Agency Y\""
+            buildConfigField "String", "FIXED_REGION_OBA_BASE_URL",
+                    "\"http://api.tampa.onebusaway.org/api\""
+            buildConfigField "String", "FIXED_REGION_SIRI_BASE_URL", "null"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT", "27.976910500000002"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON", "-82.445851"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT_SPAN", "0.5424609999999994"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON_SPAN", "0.576357999999999"
+            buildConfigField "String", "FIXED_REGION_LANG", "\"en_US\""
+            buildConfigField "String", "FIXED_REGION_CONTACT_EMAIL", "\"onebusaway@gohart.org\""
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_DISCOVERY_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_REALTIME_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_SIRI_REALTIME_APIS", "false"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_EMBEDDEDSOCIAL", "false"
+            buildConfigField "String", "FIXED_REGION_TWITTER_URL",
+                    "\"http://mobile.twitter.com/OBA_tampa\""
+            buildConfigField "String", "FIXED_REGION_STOP_INFO_URL", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_JURISDICTION_ID", "null"
+            buildConfigField "String", "FIXED_REGION_OPEN311_API_KEY", "\"937033cad3054ec58a1a8156dcdd6ad8a416af2f\""
+            buildConfigField "String", "FIXED_REGION_OPEN311_BASE_URL",
+                    "\"https://seeclickfix.com/open311/v2/\""
+            buildConfigField "String", "FIXED_REGION_OTP_BASE_URL",
+                    "\"http://otp.staging.obahart.org/otp/\""
+            buildConfigField "String", "FIXED_REGION_OTP_CONTACT_EMAIL",
+                    "\"otp-tampa@onebusaway.org\""
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OTP_BIKESHARE", "true"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_ANDROID_APP_ID", "\"co.bytemark.hart\""
+            buildConfigField "String", "FIXED_REGION_PAYMENT_WARNING_TITLE", "null"
+            buildConfigField "String", "FIXED_REGION_PAYMENT_WARNING_BODY", "null"
+        }
+
+        /**
+         * Add more rebranding flavors here...
+         */
+    }
+
+    /**
+     * Set brand BuildConfig.DATABASE_AUTHORITY, used in org.onebusaway.android.provider.ObaContract
+     */
+    applicationVariants.all {
+        variant ->
+            def authority;
+            if (variant.productFlavors.get(0).name == "oba") {
+                authority = '"' + "com.joulespersecond.oba" + '"'
+                // Must keep the original OBA authority
+                variant.buildConfigField "String", "DATABASE_AUTHORITY", authority
+            } else {
+                // It's cleaner to just append ".provider" to the applicationId for brand flavors
+                authority = '"' + applicationId.toString() + '.provider' + '"'
+                variant.buildConfigField "String", "DATABASE_AUTHORITY", authority
+            }
+    }
+
+    // http://stackoverflow.com/questions/20673625/gradle-0-7-0-duplicate-files-during-packaging-of-apk
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        disable 'MissingTranslation', 'ExtraTranslation'
+    }
+
+    if (project.hasProperty("secure.properties")
+            && new File(project.property("secure.properties")).exists()) {
+
+        Properties props = new Properties()
+        props.load(new FileInputStream(file(project.property("secure.properties"))))
+
+        signingConfigs {
+            debug {
+                storeFile file("seattlebusbot3.debug.keystore")
+            }
+
+            release {
+                storeFile file(props['key.store'])
+                keyAlias props['key.alias']
+                storePassword "askmelater"
+                keyPassword "askmelater"
+            }
+        }
+    } else {
+        signingConfigs {
+            debug {
+                storeFile file("seattlebusbot3.debug.keystore")
+            }
+
+            release {
+                // Nothing here
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+        // Append the version name to the end of aligned APKs
+        android.applicationVariants.all { variant ->
+            if (variant.buildType.name == "release") {
+                variant.outputs.all { output ->
+                    def file = output.outputFile
+                    outputFileName = "${variant.name}-v${variant.versionName}.apk"
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    testOptions {
+        unitTests.includeAndroidResources true
+    }
+
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+}
+
+/**
+ * Returns the Embedded Social API key. Returns the empty string if the key is not found
+ */
+def getEmbeddedSocialApiKey(productFlavor) {
+    def keyName = "EmbeddedSocialApiKey" + "_" + productFlavor
+    if (project.hasProperty(keyName)) {
+        return project.property(keyName)
+    } else {
+        return ""
+    }
+}
+
+/**
+ * Copies our Maps API v2-based classes from the Google build flavor to the Amazon build flavor,
+ * replacing the Google import packages and GoogleMap class with the Amazon import packages and
+ * AmazonMap class.  Copy is only executed if the files in the google build flavor are no longer
+ * equal to the ones in the amazon build flavor.
+ */
+task copyMapsApiV2Classes {
+    inputs.dir 'src/google/java/org/onebusaway/android/map/googlemapsv2'
+    outputs.dir 'src/amazon/java/org/onebusaway/android/map/googlemapsv2'
+    // up-to-date check for outputs
+    doLast {
+        copy {
+            from 'src/google/java/org/onebusaway/android/map/googlemapsv2'
+            into 'src/amazon/java/org/onebusaway/android/map/googlemapsv2'
+            exclude { details -> details.file.name.equals('ProprietaryMapHelpV2.java') }
+            filter { line -> line.replace('com.google.android.gms.maps', 'com.amazon.geo.mapsv2') }
+            filter { line -> line.replace('GoogleMap', 'AmazonMap') }
+            filter(ConcatFilter, prepend: file('AmazonMapsFileHeader.txt'))
+        }
+    }
+}
+
+preBuild.dependsOn copyMapsApiV2Classes
+
+/**
+ * Ask for keystore/key passwords on the command line or popup UI when running release builds
+ */
+task askForPasswords << {
+    def console = System.console()
+    def storePw
+    def keyPw
+
+    if (console) {
+        // Must create String because System.readPassword() returns char[]
+        // (and assigning that below fails silently)
+        storePw = new String(console.readPassword("\nKeystore password: "))
+        keyPw = new String(console.readPassword("Key password: "))
+    } else {
+        // Gradle is running as a daemon - prompt user to enter passwords via popup UI (#770)
+        new SwingBuilder().edt {
+            dialog(modal: true, title: 'Enter credentials', alwaysOnTop: true, resizable: true,
+                    locationRelativeTo: null, pack: true, show: true
+            ) {
+                vbox {
+                    label(text: "Keystore passphrase:")
+                    textField id: "storeText", input = passwordField()
+                    label(text: "Key passphrase:")
+                    textField id: "keyText", input = passwordField()
+                    button(defaultButton: true, text: 'OK', actionPerformed: {
+                        storePw = storeText.text;
+                        keyPw = keyText.text;
+                        dispose();
+                    })
+                }
+            }
+        }
+    }
+
+    android.signingConfigs.release.storePassword = storePw
+    android.signingConfigs.release.keyPassword = keyPw
+}
+
+tasks.whenTaskAdded { theTask ->
+   if (theTask.name.matches("\\bpackage\\w+Release\\b")) {
+        theTask.dependsOn "askForPasswords"
+   }
+   // Make sure that OBA release builds always have an Embedded Social API key (#907)
+   def runningTask = project.gradle.startParameter.taskNames
+
+   if ((runningTask.toString().toLowerCase().matches("(.*)oba(.*)release(.*)") || runningTask.toString().toLowerCase().contains("assemblerelease") )  && !project.hasProperty('EmbeddedSocialApiKey_oba')) {
+        throw new InvalidUserDataException("gradle.properties must contain an EmbeddedSocialApiKey_oba API key for oba release builds")
+   }
+
+}
+
+// Exclude all classes from dependencies that conflict with Android platform classes (#849)
+configurations {
+    all {
+        exclude group: 'org.json', module: 'json'
+    }
+}
+
+dependencies {
+    // Google Play Services Analytics (we need this on Amazon flavor too)
+    implementation("com.google.android.gms:play-services-analytics:${this.ext.playServicesVersion}") {
+        exclude module: 'play-services-ads' // See #342
+        force = true
+    }
+    // Google Play Services Location (we need this on Amazon flavor too)
+    implementation("com.google.android.gms:play-services-location:${this.ext.playServicesVersion}") {
+        force = true
+    }
+    // Support libraries
+    implementation ('androidx.cardview:cardview:1.0.0') {
+        force = true
+    }
+    implementation ('com.google.android.material:material:1.0.0') {
+        force = true
+    }
+    implementation 'commons-io:commons-io:2.4'
+    // Open311 client library
+    implementation 'edu.usf.cutr:open311client:1.0.9'
+    // JSON data binding for OBA REST API responses
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.4'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+    // Bottom sliding panel
+    implementation 'com.sothree.slidinguppanel:library:3.3.0'
+    // For floating action button speed dial
+    implementation ('uk.co.markormesher:android-fab:2.2.0')
+    // For sorting alphanumeric route names
+    implementation 'org.onebusaway.util:comparators:1.0.0'
+    // For tutorial (ShowcaseView) library
+    implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
+    // POJOs used for full data-binding via Jackson
+    implementation 'edu.usf.cutr.opentripplanner.android:opentripplanner-pojos:1.0.0-SNAPSHOT'
+    // Google Play Services Maps (only for Google flavor)
+    googleImplementation ("com.google.android.gms:play-services-maps:${this.ext.playServicesVersion}") {
+        force = true
+    }
+    // Google Play Services Places is required by ProprietaryMapHelpV2 (only for Google flavor)
+    googleImplementation ("com.google.android.gms:play-services-places:${this.ext.playServicesVersion}") {
+        force = true
+    }
+    // Amazon Maps (only for Amazon flavor)
+    amazonImplementation 'com.amazon.android:amazon-maps-api:2.0'
+    // Embedded Social SDK
+    implementation('com.acrowntest.test:sdk:0.7.1:release@aar') {
+        transitive = true;
+    }
+    // Required to support multidex for minSdkVersion <= 20
+    implementation 'androidx.multidex:multidex:2.0.0'
+    // Unit tests - seems like this is still necessary w/ Android X even though useLibrary is declared earlier
+    androidTestImplementation 'androidx.test:runner:1.1.0-beta01'
+}
+
+// Dependencies not directly used in this project, but used by dependencies that we are using
+configurations.all {
+    // Needed to eliminate conflict with EmbeddedSocial SDK Google Play Services & Firebase libraries
+    resolutionStrategy.force "com.google.android.gms:play-services-auth:${this.ext.playServicesVersion}"
+    resolutionStrategy.force "com.google.android.gms:play-services-gcm:${this.ext.playServicesVersion}"
+    resolutionStrategy.force "com.google.firebase:firebase-core:${this.ext.playServicesVersion}"
+    resolutionStrategy.force "com.google.firebase:firebase-analytics:${this.ext.playServicesVersion}"
+}

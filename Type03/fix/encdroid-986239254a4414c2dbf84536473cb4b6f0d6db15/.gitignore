@@ -1,0 +1,7 @@
+local.properties
+.vimrc
+cscope*
+.idea
+build
+*.iml
+.gradle

@@ -1,0 +1,8 @@
+{
+  "allAbis": [
+    "mips"
+  ],
+  "validAbis": [
+    "MIPS"
+  ]
+}

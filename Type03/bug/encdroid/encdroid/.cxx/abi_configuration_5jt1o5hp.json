@@ -1,0 +1,12 @@
+{
+  "allAbis": [
+    "arm64-v8a",
+    "x86",
+    "mips"
+  ],
+  "validAbis": [
+    "ARM64_V8A",
+    "X86",
+    "MIPS"
+  ]
+}

@@ -1,6 +1,6 @@
 App,Lint(BUG),ARPDroid,RevDroid,Lint(FIX),ARPDroid,RevDroid,BUG-URL,FIX-URL
 Apps-android-commons,-,External Permission,Location Permission,-,FP,FP,https://github.com/commons-app/apps-android-commons/tree/3bd3f170f775e9034a1747dd9e9d63482b8c4f34,https://github.com/commons-app/apps-android-commons/tree/1530ddc969453451217f0240c5822acc35818d6a
-KISS,-,Phone Permission,Phone Permission,-,FP,FP,https://github.com/Neamar/KISS/tree/75d93b21e6ecefa7b28a3464573dc1fe2f250be3,https://github.com/Neamar/KISS/tree/d96d20f41d694e5106bd075e50671b8ab8c3443b
+KISS,-,Phone Permission,Phone Permission,-,FP,FP,Neamar/KISS at 9d81138e0a890f623b45df79b7c581c3fc7c278f (github.com),Neamar/KISS at b45e73e414413a9e9442f4793829d9f551ff01ff (github.com)
 Onebusaway-android,-,x,x,-,,,https://github.com/OneBusAway/onebusaway-android/tree/ee45830c6571ee769ff06168e54212811a8c3ac0,https://github.com/OneBusAway/onebusaway-android/tree/7cb3a97929c2afc0c9e537ee061cbe24c8308004
 WiFiAnalyzer,-,x,x,-,,,https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer/tree/f8887cfc4269db7a046de821c6d33cd06cd8234c,https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer/tree/ea6ac4503783067b3ce94275e4219d250707fd0e
 Subsonic,-,Phone Permission,Phone Permission,-,FP,FP,https://github.com/daneren2005/Subsonic/tree/d8c5a9f8b4b58489e113c637d358ba64df899a42,https://github.com/daneren2005/Subsonic/tree/d3cd581edd08ba9811aa4f87362ea81a02fe11db

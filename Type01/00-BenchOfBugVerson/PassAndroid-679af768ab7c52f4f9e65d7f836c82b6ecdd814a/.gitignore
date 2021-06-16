@@ -1,0 +1,9 @@
+.gradle
+build
+.idea
+#assets
+bin
+gen
+project.properties
+gradle.properties
+local.properties

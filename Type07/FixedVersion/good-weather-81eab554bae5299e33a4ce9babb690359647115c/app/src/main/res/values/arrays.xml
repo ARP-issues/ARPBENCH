@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_temperature_entries" translatable="false">
+        <item>°C</item>
+        <item>°F</item>
+    </string-array>
+    <string-array name="pref_temperature_values" translatable="false">
+        <item>metric</item>
+        <item>imperial</item>
+    </string-array>
+
+    <string-array name="notification_refresh_intervals_entries">
+        <item>@string/update_period_15min</item>
+        <item>@string/update_period_30min</item>
+        <item>@string/update_period_1hour</item>
+        <item>@string/update_period_3hours</item>
+        <item>@string/update_period_6hours</item>
+        <item>@string/update_period_12hours</item>
+        <item>@string/update_period_24hours</item>
+    </string-array>
+    <string-array name="notification_refresh_interval_values" translatable="false">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+    </string-array>
+
+    <string-array name="widget_update_period_entries">
+        <item>@string/update_period_30min</item>
+        <item>@string/update_period_1hour</item>
+        <item>@string/update_period_3hours</item>
+        <item>@string/update_period_6hours</item>
+        <item>@string/update_period_12hours</item>
+        <item>@string/update_period_24hours</item>
+    </string-array>
+    <string-array name="widget_update_period_values" translatable="false">
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+    </string-array>
+
+    <!-- Wind directions array -->
+    <string-array name="wind_directions">
+        <item>@string/wind_direction_north</item>
+        <item>@string/wind_direction_north_east</item>
+        <item>@string/wind_direction_east</item>
+        <item>@string/wind_direction_south_east</item>
+        <item>@string/wind_direction_south</item>
+        <item>@string/wind_direction_south_west</item>
+        <item>@string/wind_direction_west</item>
+        <item>@string/wind_direction_north_west</item>
+    </string-array>
+    <string-array name="wind_direction_arrows" translatable="false">
+        <item name="n">&#xf058;</item>
+        <item name="ne">&#xf057;</item>
+        <item name="e">&#xf04d;</item>
+        <item name="se">&#xf088;</item>
+        <item name="s">&#xf044;</item>
+        <item name="sw">&#xf043;</item>
+        <item name="w">&#xf048;</item>
+        <item name="nw">&#xf087;</item>
+    </string-array>
+</resources>

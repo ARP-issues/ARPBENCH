@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sharing_status_specific_user">Only specific users</string>
+    <string name="sharing_status_link">Anyone with the link</string>
+    <string name="sharing_status_public">Public on the web</string>
+
+    <string name="sharing_status_detail_specific_user">Is Public: [No] &amp; Discoverable: [No]</string>
+    <string name="sharing_status_detail_link">Is Public: [Yes] &amp; Discoverable: [No]</string>
+    <string name="sharing_status_detail_public">Is Public: [Yes] &amp; Discoverable: [Yes]</string>
+    
+    <string name="full_rights">Full Rights</string>
+    <string name="read_only">Read Only</string>
+    <string name="no_access">No Access</string>
+    <string name="sharing_settings_title">Sharing Settings</string>
+    <string name="pending">&#8230;pending</string>
+    <string name="revoke">Revoke</string>
+    <string name="transfer">Transfer</string>
+
+    <string name="create_sharing_hint_username">Email or Username</string>
+    <string name="create_sharing_hint_message">Message to send in Email (Optional)</string>
+    <string name="transfer_dialog_title">Transfer Camera Ownership</string>
+    <string name="transfer_dialog_content">Transfer ownership to a user who you are already sharing the camera with.
+        \n\nOnce you Transfer, you may lose all rights to the camera and associated artifacts.</string>
+    <string name="transfer_select_title">Select a new owner</string>
+
+    <string name="msg_share_updated">Share successfully updated</string>
+    <string name="msg_share_created">Camera successfully shared with user</string>
+    <string name="msg_share_request_created">A notification Email has been sent to the specified Email address</string>
+    <string name="msg_sharing">Sharing</string>
+    <string name="msg_confirm_remove_share">Are you sure you want to remove this share?</string>
+    <string name="msg_confirm_revoke_share_request">Are you sure you want to revoke this share?</string>
+    <string name="msg_transfer_success">Camera ownership has been successfully transferred.</string>
+    <string name="msg_transferring">Transferring</string>
+    <string name="msg_confirm_remove_self">You will lose access for this camera. Are you sure?</string>
+    <string name="msg_share_before_transfer">This camera is not shared with anyone. You need to share it before transferring ownership.</string>
+    <string name="msg_no_access">This camera has been deleted or you don\'t have full access to it.</string>
+
+</resources>

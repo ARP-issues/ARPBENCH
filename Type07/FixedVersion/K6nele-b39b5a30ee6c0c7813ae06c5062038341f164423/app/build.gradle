@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile project(':speechutils:app')
+    compile project(':net-speech-api')
+    compile 'commons-io:commons-io:2.0.1'
+    compile 'com.googlecode.json-simple:json-simple:1.1'
+    // TODO: This did not work
+    //compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile 'com.koushikdutta.async:androidasync:2.1.3'
+    compile 'com.android.support:support-v13:23.2.1'
+    // Enable this when using the support library for the vector drawables
+    //compile 'com.android.support:appcompat-v7:23.2.1'
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    // API level 3: some default button was not found, but we didn't explore it further.
+    // API level 7: MediaRecorder.AudioSource.VOICE_RECOGNITION
+    // API level 8: android.speech.SpeechRecognizer and android.speech.RecognitionService
+    // API level 14: @android:style/Theme.DeviceDefault
+    defaultConfig {
+        applicationId 'ee.ioc.phon.android.speak'
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1518
+        versionName '1.5.18'
+        // Enable this when using the support library for the vector drawables
+        //vectorDrawables.useSupportLibrary = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(System.getenv("KEYSTORE"))
+            keyAlias System.getenv("KEY_ALIAS")
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile 'proguard.cfg'
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        //disable 'AppCompatResource','MissingPrefix','ResourceType'
+        disable 'ResourceType'
+    }
+}
+
+
+if (project.hasProperty('storePassword') &&
+        project.hasProperty('keyPassword')) {
+    android.signingConfigs.release.storePassword = storePassword
+    android.signingConfigs.release.keyPassword = keyPassword
+} else {
+    android.buildTypes.release.signingConfig = null
+}
+
+
+task(deploy) << {
+    description 'Copy the APK and the ProGuard mapping file to the deploy directory'
+
+    def deploy_dir = System.getenv('APK_DEPLOY_DIR')
+
+    def version = android.defaultConfig.versionName
+
+    def outputs = 'build/outputs/'
+    def apk1 = outputs + 'apk/app-release.apk'
+    def apk2 = "${deploy_dir}K6nele-${version}.apk"
+    def mapping1 = outputs + 'mapping/release/mapping.txt'
+    def mapping2 = "${deploy_dir}K6nele-mapping-${version}.txt"
+
+    def output1 = exec {
+        commandLine 'cp', '--verbose', apk1, apk2
+    }
+
+    def output2 = exec {
+        commandLine 'cp', '--verbose', mapping1, mapping2
+    }
+
+    def output3 = exec {
+        commandLine 'ls', '-l', deploy_dir
+    }
+
+    println "adb uninstall ee.ioc.phon.android.speak"
+    println "adb install ${apk2}"
+}

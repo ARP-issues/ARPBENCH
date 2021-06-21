@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.support:support-v13:23.3.0@aar">
+    <CLASSES>
+      <root url="file://D:/Gradle/Repo/caches/transforms-2/files-2.1/c36f580c6d912900cb995d2bb2136359/support-v13-23.3.0/AndroidManifest.xml" />
+      <root url="jar://D:/Gradle/Repo/caches/transforms-2/files-2.1/c36f580c6d912900cb995d2bb2136359/support-v13-23.3.0/jars/classes.jar!/" />
+      <root url="file://D:/Gradle/Repo/caches/transforms-2/files-2.1/c36f580c6d912900cb995d2bb2136359/support-v13-23.3.0/res" />
+      <root url="jar://D:/Gradle/Repo/caches/transforms-2/files-2.1/c36f580c6d912900cb995d2bb2136359/support-v13-23.3.0/jars/libs/internal_impl-23.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/Gradle/Repo/caches/modules-2/files-2.1/com.android.support/support-v13/23.3.0/54100eaf160977e4e8a9e53db9670538753bc514/support-v13-23.3.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/Gradle/Repo/caches/modules-2/files-2.1/com.android.support/support-v13/23.3.0/2da6302ca7e9ffc4253dc7befdcc7de94c4b7c39/support-v13-23.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

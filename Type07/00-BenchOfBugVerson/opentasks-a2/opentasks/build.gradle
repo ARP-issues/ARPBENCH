@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+// commit number is only relevant to the application project
+def gitCommitNo = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-list', '--count', 'HEAD'
+        standardOutput = stdout
+    }
+    return Integer.parseInt(stdout.toString().trim())
+}
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion BUILD_TOOLS_VERSION
+    defaultConfig {
+        applicationId "org.dmfs.tasks"
+        minSdkVersion MIN_SDK_VERSION.toInteger()
+        targetSdkVersion TARGET_SDK_VERSION.toInteger()
+        versionCode gitCommitNo() * 10 // spread version code to allow inserting versions if necessary
+        versionName version
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+
+    productFlavors {
+    }
+
+    lintOptions {
+        disable 'MissingTranslation' // TODO
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:' + SUPPORT_LIBRARY_VERSION
+    compile 'com.android.support:design:' + SUPPORT_LIBRARY_VERSION
+    compile('org.dmfs:android-xml-magic:0.1.1') {
+        // xmlpull is part of the runtime, so don't pull it in here
+        exclude group: 'xmlpull', module: 'xmlpull'
+    }
+    compile project(':opentasks-provider')
+    compile 'com.google.android.apps.dashclock:dashclock-api:2.0.0'
+    compile 'com.github.dmfs:color-picker:1.0'
+    compile ('au.com.codeka:carrot:2.4.0'){
+        exclude module: 'iterators' // TODO Remove when iterators have been removed from codeka:carrot
+    }
+    compile('com.github.dmfs.androidcarrot:androidcarrot:13edc04') {
+        exclude module: 'carrot'
+        exclude group: 'com.android.support'
+        exclude module: 'iterators'
+        exclude module: 'jems'
+    }
+    compile 'org.dmfs:jems:' + JEMS_VERSION
+
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,13 @@
+/bin
+/gen
+/.settings
+.DS_Store
+libs/*.properties
+proguard/
+.gradle
+*.iml
+/build
+/local.properties
+.idea
+.floo
+.flooignore

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SharingListItemLayout">
+
+    <ImageView
+        android:id="@+id/share_profile_image_view"
+        style="@style/SharingListItemImage"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        style="@style/SharingListItemTextLayout"
+        android:layout_toRightOf="@+id/share_profile_image_view">
+
+        <TextView
+            android:id="@+id/sharing_fullname_text_view"
+            style="@style/SharingListItemTextTitle"/>
+
+        <TextView
+            android:id="@+id/sharing_email_text_view"
+            style="@style/SharingListItemTextSubTitle"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sharing_item_status_text_view"
+        style="@style/SharingListItemStatusText"/>
+
+</RelativeLayout>

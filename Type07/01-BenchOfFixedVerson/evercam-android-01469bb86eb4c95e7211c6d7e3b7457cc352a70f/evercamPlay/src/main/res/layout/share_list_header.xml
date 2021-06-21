@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        style="@style/SharingListItemLayout">
+
+        <ImageView
+            android:id="@+id/share_status_icon_image_view"
+            style="@style/SharingListItemImage"
+            android:src="@drawable/ic_fontawsome_users"/>
+
+        <LinearLayout
+            style="@style/SharingListItemTextLayout"
+            android:layout_toRightOf="@+id/share_status_icon_image_view">
+
+            <TextView
+                android:id="@+id/sharing_status_text_view"
+                style="@style/SharingListItemTextTitle"
+                android:text="@string/sharing_status_specific_user"/>
+
+            <TextView
+                android:id="@+id/sharing_status_detail_text_view"
+                style="@style/SharingListItemTextSubTitle"
+                android:text="@string/sharing_status_detail_specific_user"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/evercam_dark_gray"/>
+</RelativeLayout>

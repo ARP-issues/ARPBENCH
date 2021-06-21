@@ -1,0 +1,118 @@
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Карты лояльности</string>
+    <string name="action_search">Поиск</string>
+    <string name="action_add">Добавить карту</string>
+
+    <string name="noGiftCards">Пока нет ни одной карты. Нажмите на кнопку «+» (плюс) сверху для добавления.\n\n«Карты лояльности» позволяют хранить карты скидок в телефоне, так что они всегда будут под рукой.</string>
+    <string name="noMatchingGiftCards">Карт не найдено, попробуйте поискать по-другому.</string>
+
+    <string name="storeName">Магазин</string>
+    <string name="note">Примечание</string>
+    <string name="cardId">Номер карты</string>
+    <string name="barcodeType">Тип штрихкода</string>
+    <string name="barcodeNoBarcode">Эта карта без штрихкода</string>
+
+    <string name="cancel">Отменить</string>
+    <string name="save">Сохранить</string>
+    <string name="capture">Сканировать карту</string>
+    <string name="enterCard">Ввести номер</string>
+    <string name="editCard">Редактировать штрих-код</string>
+    <string name="edit">Редактировать</string>
+    <string name="delete">Удалить карту</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="lockScreen">Блокировать поворот экрана</string>
+    <string name="unlockScreen">Автоповорот экрана</string>
+    <string name="deleteTitle">Удаление карты</string>
+    <string name="deleteConfirmation">Пожалуйста подтвердите удаление карты.</string>
+    <string name="ok">ОК</string>
+    <string name="copy_to_clipboard">Скопировать номер карты в буфер обмена</string>
+    <string name="share">Переслать</string>
+    <string name="sendLabel">Отправить&#8230;</string>
+    <string name="addedShortcut">Добавленный ярлык</string>
+    <string name="editCardTitle">Редактировать карту</string>
+    <string name="addCardTitle">Добавить карту</string>
+    <string name="scanCardBarcode">Отсканируйте штрих-код</string>
+    <string name="cardShortcut">Ярлык карты</string>
+    <string name="noCardsMessage">Карт нет, добавьте одну для начала</string>
+
+    <string name="barcodeImageDescription">Изображение штрих-кода</string>
+
+    <string name="noStoreError">Название магазина не указано</string>
+    <string name="noCardIdError">Номер карты не указан</string>
+    <string name="noCardExistsError">Карта не найдена</string>
+    <string name="failedParsingImportUriError">Не удалось разобрать импортируемый URI</string>
+    <string name="cardIdFormat">%1$s: %2$s</string>
+    <string name="importExport">Импорт/Экспорт</string>
+    <string name="exportName">Экспорт</string>
+    <string name="importExportHelp">Сохранение карт позволяет перенести их на другое устройство.</string>
+    <string name="importSuccessfulTitle">Успешный импорт</string>
+    <string name="importFailedTitle">Импорт не удался</string>
+    <string name="importFailed">Не удалось импортировать</string>
+    <string name="exportSuccessfulTitle">Успешный экспорт</string>
+    <string name="exportFailedTitle">Экспорт не удался</string>
+    <string name="exportFailed">Не удалось экспортировать</string>
+    <string name="importing">Импорт&#8230;</string>
+    <string name="exporting">Экспорт&#8230;</string>
+    <string name="noExternalStoragePermissionError">Импорт или экспорт невозможен без разрешения на доступ к хранилищу</string>
+    <string name="exportOptionExplanation">Данные будут записаны в выбранное место.</string>
+    <string name="importOptionFilesystemTitle">Импорт из файловой системы</string>
+    <string name="importOptionFilesystemExplanation">Выберете файл на файловой системе.</string>
+    <string name="importOptionFilesystemButton">Выбрать файл</string>
+    <string name="importOptionApplicationTitle">Использование другого приложения</string>
+    <string name="importOptionApplicationExplanation">Использовать другое приложение такое как Dropbox, Google Drive, или ваш любимый файловый менеджер чтобы открыть файл.</string>
+    <string name="importOptionApplicationButton">Использовать другое приложение</string>
+
+    <string name="about">О программе</string>
+    <string name="app_copyright_fmt">Все права защищены 2016-<xliff:g>%d</xliff:g> Branden Archer</string>
+    <string name="app_license">Лицензия GPLv3.</string>
+    <string name="about_title_fmt">О программе <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="debug_version_fmt">Версия: <xliff:g id="version">%s</xliff:g></string>
+    <string name="app_revision_fmt">Информация о версиях: <xliff:g id="app_revision_url">%s</xliff:g></string>
+    <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> использует следующие сторонние библиотеки: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_resources"><xliff:g id="app_name">%s</xliff:g> использует следующие сторонние ресурсы: <xliff:g id="app_resources_list">%s</xliff:g></string>
+
+    <string name="selectBarcodeTitle">Выбор штрих-кода</string>
+    <string name="enterBarcodeInstructions">Введите ID карты и выберите тип штрих-кода.</string>
+
+    <string name="copy_to_clipboard_toast">Номер карты скопирован в буфер обмена</string>
+
+    <string name="thumbnailDescription">Логотип карты</string>
+
+    <string name="startIntro">Введение</string>
+    <string name="intro1Title">Добро пожаловать в Карты лояльности\n</string>
+    <string name="intro1Description">Храните все карты лояльности/магазинов со штрих-кодом в телефоне!\n\n</string>
+    <string name="intro2Title">Добавление карт\n</string>
+    <string name="intro2Description">Добавьте новую карту, нажав на плюс на экране со списком карт.\n\n</string>
+    <string name="intro3Title">Добавление карт\n</string>
+    <string name="intro3Description">Для добавления штрих-кода отсканируйте карту камерой или введите номер вручную.\n\n</string>
+    <string name="intro4Title">Показ карты\n</string>
+    <string name="intro4Description">Для показа карты, нажмите на название магазина на главном экране.\n\n</string>
+    <string name="intro5Title">Резервное копирование\n</string>
+    <string name="intro5Description">Можно сделать резервную копию карт. Для этого нажмите Импорт/Экспорт в меню на главном экране.\n\n</string>
+    <string name="intro6Title">Отзыв\n</string>
+    <string name="intro6Description">Это бесплатное приложение, без рекламы и с открытым исходным кодом. Подробнее в разделе «О программе» в меню на главном экране.\n\nПожалуйста, оставьте отзыв в маркете приложений! (:</string>
+
+    <string name="change">Изменить</string>
+    <string name="storeTextColorTitle">Цвет текста</string>
+    <string name="storeTextBackgroundColorTitle">Цвет фона</string>
+    <string name="storeNameBackgroundColorDescription">Цвет фона названия магазина</string>
+    <string name="storeNameColorDescription">Цвет текста названия магазина</string>
+
+    <string name="settings">Настройки</string>
+    <string name="settings_category_title_ui">Внешний вид</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_system_theme">Системная тема</string>
+    <string name="settings_light_theme">Светлая тема</string>
+    <string name="settings_dark_theme">Тёмная тема</string>
+    <string name="settings_card_title_list_font_size">Размер шрифта названия карты для списка</string>
+    <string name="settings_card_note_list_font_size">Размер шрифта примечания для списка</string>
+    <string name="settings_card_title_font_size">Размер шрифта названия карты</string>
+    <string name="settings_card_id_font_size">Размер шрифта номера карты</string>
+    <string name="settings_card_note_font_size">Размер шрифта примечания</string>
+    <string name="settings_display_barcode_max_brightness">Максимальная яркость при показе карты</string>
+    <string name="settings_lock_barcode_orientation">Портретная ориентация экрана при показе карты</string>
+    <string name="intent_import_card_from_url">Импортировать карту</string>
+    <string name="intent_import_card_from_url_share_text">Я хочу поделиться картой с вами</string>
+    </resources>

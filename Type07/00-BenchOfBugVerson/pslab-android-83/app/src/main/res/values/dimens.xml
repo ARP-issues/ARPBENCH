@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">175dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="profile_width">80dp</dimen>
+    <dimen name="profile_height">80dp</dimen>
+
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_radius">2dp</dimen>
+    <dimen name="title_padding">10dp</dimen>
+    <dimen name="image_padding_around">30dp</dimen>
+    <dimen name="image_padding_top">20dp</dimen>
+
+    <dimen name="title_font_size">14sp</dimen>
+
+    <dimen name="control_margin">10dp</dimen>
+    <dimen name="control_margin_small">5dp</dimen>
+    <dimen name="control_margin_medium">15dp</dimen>
+    <dimen name="control_margin_large">20dp</dimen>
+    <dimen name="control_card_height">110dp</dimen>
+    <dimen name="control_card_radius">18dp</dimen>
+    <dimen name="control_text_padding">5dp</dimen>
+    <dimen name="control_textsize_tiny">14sp</dimen>
+    <dimen name="control_textsize_small">16sp</dimen>
+    <dimen name="control_textsize_medium">18sp</dimen>
+    <dimen name="textsize_edittext">12sp</dimen>
+    <dimen name="control_textsize_large">20sp</dimen>
+    <dimen name="control_edittext_padding">2dp</dimen>
+    <dimen name="control_read_border_hdpi">5dp</dimen>
+    <dimen name="control_read_height">60dp</dimen>
+
+</resources>

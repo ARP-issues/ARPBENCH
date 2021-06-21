@@ -1,0 +1,9 @@
+*.iml
+gen/
+bin/
+build/
+user.gradle
+.gradle/
+local.properties
+.idea/
+BuildConfig.java

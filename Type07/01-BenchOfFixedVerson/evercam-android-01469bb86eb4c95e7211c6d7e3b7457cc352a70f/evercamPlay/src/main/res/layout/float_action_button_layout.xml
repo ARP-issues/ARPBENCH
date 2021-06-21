@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/action_button_layout">
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/add_action_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        fab:fab_addButtonColorNormal="@color/orange_red"
+        fab:fab_addButtonColorPressed="@color/orange_red_pressed"
+        fab:fab_addButtonPlusIconColor="@color/white"
+        fab:fab_labelStyle="@style/actionMenuLabelStyle"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_action_button_manually"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/orange_red"
+            fab:fab_title="@string/add_camera_manually"
+            fab:fab_icon="@drawable/ic_edit"
+            fab:fab_colorPressed="@color/orange_red_pressed"
+            fab:fab_size="mini"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_action_button_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/orange_red"
+            fab:fab_title="@string/scan_for_cameras"
+            fab:fab_icon="@drawable/ic_scan"
+            fab:fab_colorPressed="@color/orange_red_pressed"
+            fab:fab_size="mini"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</RelativeLayout>

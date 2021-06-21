@@ -1,0 +1,103 @@
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Loyalty Card Keychain</string>
+    <string name="action_search">Suche</string>
+    <string name="action_add">Neu</string>
+
+    <string name="noGiftCards">Sie haben noch keine Kundenkarte angelegt. Über den \"+\"-Button oben rechts können welche angelegt werden.\n\nDiese App ermöglicht es, Kundenkarten immer mit zu führen.</string>
+    <string name="noMatchingGiftCards">Es passen keine Kundenkarten zum Suchfilter. Bitte probiere verschiedene Begriffe aus.</string>
+
+    <string name="storeName">Geschäft</string>
+    <string name="note">Notiz</string>
+    <string name="cardId">Kartennummer</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
+    <string name="capture">Karte scannen</string>
+    <string name="enterCard">Manuell eingeben</string>
+    <string name="editCard">Karte bearbeiten</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="delete">Löschen</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="lockScreen">Rotation blockieren</string>
+    <string name="unlockScreen">Rotation zulassen</string>
+    <string name="deleteTitle">Karte entfernen</string>
+    <string name="deleteConfirmation">Bitte bestätigen Sie, dass diese Karte gelöscht werden soll.</string>
+    <string name="ok">Ok</string>
+    <string name="copy_to_clipboard">Kopiere die Nummer in die Zwischenablage</string>
+    <string name="sendLabel">Senden&#8230;</string>
+    <string name="editCardTitle">Kundenkarte bearbeiten</string>
+    <string name="addCardTitle">Neue Kundenkarte</string>
+    <string name="scanCardBarcode">Barcode scannen</string>
+    <string name="cardShortcut">Shortcut zu einer Karte</string>
+    <string name="noCardsMessage">Es ist noch keine Karte vorhanden, bitte zuerst eine hinzufügen</string>
+
+    <string name="barcodeImageDescription">Bild des Barcodes</string>
+
+    <string name="noStoreError">Kein Geschäft angegeben</string>
+    <string name="noCardIdError">Keine Kartennummer angegeben</string>
+    <string name="noCardExistsError">Karte konnte nicht gefunden werden</string>
+    <string name="cardIdFormat">%1$s: %2$s</string>
+    <string name="importExport">Import/Export</string>
+    <string name="exportName">Exportieren</string>
+    <string name="importExportHelp">Gesicherte Daten ermöglichen das Verschieben der Kundenkarten auf ein anderes Gerät.</string>
+    <string name="importSuccessfulTitle">Import erfolgreich</string>
+    <string name="importFailedTitle">Import fehlgeschlagen</string>
+    <string name="importFailed">Import fehlgeschlagen</string>
+    <string name="exportSuccessfulTitle">Export erfolgreich</string>
+    <string name="exportFailedTitle">Export fehlgeschlagen</string>
+    <string name="exportFailed">Export fehlgeschlagen</string>
+    <string name="importing">Importiere…</string>
+    <string name="exporting">Exportiere…</string>
+    <string name="noExternalStoragePermissionError">Ohne die Berechtigung für den externen Speicher kann kein Import oder Export erfolgen.</string>
+    <string name="importOptionFilesystemTitle">Importiere aus Dateisystem</string>
+    <string name="importOptionFilesystemExplanation">Wähle eine Datei aus dem Speicher aus.</string>
+    <string name="importOptionFilesystemButton">Aus Dateisystem</string>
+    <string name="importOptionApplicationTitle">Externe App verwenden</string>
+    <string name="importOptionApplicationExplanation">Wählen Sie eine Datei aus einer App wie Dropbox, Google Drive, oder Ihrem bevorzugten Dateisystem aus.</string>
+    <string name="importOptionApplicationButton">Nutze eine externe App</string>
+
+    <string name="about">Über</string>
+    <string name="app_copyright_fmt">Copyright 2016-<xliff:g>%d</xliff:g> Branden Archer</string>
+    <string name="app_license">Lizensiert unter der GPLv3.</string>
+    <string name="about_title_fmt">Über <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="debug_version_fmt">Version: <xliff:g id="version">%s</xliff:g></string>
+    <string name="app_revision_fmt">Informationen zu dieser Version: <xliff:g id="app_revision_url">%s</xliff:g></string>
+    <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> benutzt die folgenden Fremdbibliotheken: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="app_resources"><xliff:g id="app_name">%s</xliff:g> verwendet folgenden Dritt-Ressourcen: <xliff:g id="app_resources_list">%s</xliff:g></string>
+
+    <string name="selectBarcodeTitle">Barcode auswählen</string>
+    <string name="copy_to_clipboard_toast">Nummer in die Zwischenablage kopiert</string>
+
+    <string name="thumbnailDescription">Vorschaubild für die Karte</string>
+
+    <string name="startIntro">Starte Einführung</string>
+    <string name="intro1Title">Willkommen zu Loyalty Card Keychain\n</string>
+    <string name="intro1Description">Verwalten Sie Ihre Barcode-Kundenkarten auf Ihrem Smartphone!\n\n</string>
+    <string name="intro2Title">Karten hinzufügen\n</string>
+    <string name="intro2Description">Fügen Sie neue Karten hinzu indem Sie das "+" Symbol in der Liste berühren.\n\n</string>
+    <string name="intro3Title">Karten hinzufügen\n</string>
+    <string name="intro3Description">Um einen Barcode hinzuzufügen, verwenden Sie die Kamera oder geben Sie den Code manuell ein.\n\n</string>
+    <string name="intro4Title">Karte anzeigen\n</string>
+    <string name="intro4Description">Um eine Karte anzuzeigen, den entsprechenen Namen in der Hauptansicht anwählen.\n\n</string>
+    <string name="intro5Title">Backup\n</string>
+    <string name="intro5Description">Sie können selbstverständlich Backups anlegen. Um Karten zu exportieren oder importieren wählen Sie Import/Export im Menü auf dem Hauptbildschirm.\n\n</string>
+    <string name="intro6Title">Feedback\n</string>
+    <string name="intro6Description">Diese App enthält keine Werbung, und ist freie und quelloffene Software. Für Details berühren Sie Über im Menü auf der Hauptseite.\n\nHinterlassen Sie uns ein Feedback im App-Store (:</string>
+
+    <string name="change">Anpassen</string>
+    <string name="storeTextColorTitle">Textfarbe</string>
+    <string name="storeTextBackgroundColorTitle">Hintergrundfarbe</string>
+    <string name="storeNameBackgroundColorDescription">Hintergrundfarbe für den Geschäftsnamen</string>
+    <string name="storeNameColorDescription">Farbe für den Geschäftsnamen</string>
+
+    <string name="settings">Einstellungen</string>
+    <string name="settings_category_title_ui">Benutzeroberfläche</string>
+    <string name="settings_card_title_list_font_size">Schriftgröße des Titels in der Listenansicht</string>
+    <string name="settings_card_note_list_font_size">Schriftgröße der Notiz in der Listenansicht</string>
+    <string name="settings_card_title_font_size">Schriftgröße des Titels</string>
+    <string name="settings_card_id_font_size">Schriftgröße der Kartennummer</string>
+    <string name="settings_card_note_font_size">Schriftgröße der Notiz</string>
+    <string name="settings_display_barcode_max_brightness">Helligkeit bei Barcode Ansicht erhöhen</string>
+    <string name="settings_lock_barcode_orientation">Barcodeausrichtung sperren</string>
+    </resources>

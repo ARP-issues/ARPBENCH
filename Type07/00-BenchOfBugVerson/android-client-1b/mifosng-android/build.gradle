@@ -1,0 +1,229 @@
+/*
+ * This project is licensed under the open source MPL V2.
+ * See https://github.com/openMF/android-client/blob/master/LICENSE.md
+ */
+
+buildscript {
+    repositories {
+        mavenCentral()
+        //maven { url 'http://download.crashlytics.com/maven' }
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        //classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.github.triplet.gradle:play-publisher:1.1.4'
+    }
+}
+
+repositories {
+    mavenCentral()
+    //maven { url 'http://download.crashlytics.com/maven' }
+    jcenter()
+    maven { url "https://jitpack.io" }
+    maven { url 'http://dl.bintray.com/amulyakhare/maven' }
+}
+
+apply plugin: 'com.android.application'
+//apply plugin: 'crashlytics'
+apply from: '../config/quality/quality.gradle'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.github.triplet.play'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        // A test runner provided by https://code.google.com/p/android-test-kit/
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        def commonTestDir = 'src/commonTest/java'
+        main {
+            java.srcDirs = ['src/main/java']
+        }
+        androidTest {
+            java.srcDirs = ['src/instrumentTest/java/']
+            java.srcDir commonTestDir
+        }
+        test {
+            java.srcDir commonTestDir
+        }
+    }
+
+    dexOptions {
+        incremental true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../default_key_store.jks")
+            storePassword "mifos1234"
+            keyAlias "mifos"
+            keyPassword "mifos1234"
+        }
+    }
+
+    productFlavors {
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            // TODO  Uses new built-in shrinker, To Enable update buils tools to 2.2
+            // TODO http://tools.android.com/tech-docs/new-build-system/built-in-shrinker
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            useProguard false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+        }
+
+    }
+    lintOptions {
+        abortOnError false
+        disable 'InvalidPackage'
+    }
+
+
+    // Exclude duplicated Hamcrest LICENSE.txt from being packaged into the apk.
+    // This is a workaround for https://code.google.com/p/android/issues/detail?id=65445.
+    // The Hamcrest is used in tests.
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE.txt'
+    }
+    useLibrary 'org.apache.http.legacy'
+
+    // Always show the result of every unit test, even if it passes.
+    testOptions.unitTests.all {
+        testLogging {
+            events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+        }
+    }
+}
+
+task buildAndEMailAPK(type: Exec, description: 'Builds and Generates a Signed APK and emails it') {
+
+
+}
+
+tasks.withType(JavaCompile) {
+    configure(options) {
+        // TODO
+        compilerArgs << "-Xlint:deprecation"
+        compilerArgs << "-Xlint:-unchecked"
+        compilerArgs << "-Xlint:-rawtypes"
+    }
+}
+
+dependencies {
+
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+
+    compile fileTree(dir: 'src/main/libs', include: ['*.jar'])
+
+    //DBFlow dependencies
+    apt "com.github.Raizlabs.DBFlow:dbflow-processor:$rootProject.raizLabsDBFlow"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:$rootProject.raizLabsDBFlow"
+    compile "com.github.Raizlabs.DBFlow:dbflow:$rootProject.raizLabsDBFlow"
+
+    // App's Support dependencies, including test
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    compile "com.google.android.gms:play-services-places:$rootProject.playServicesVersion"
+    compile "com.google.android.gms:play-services-location:$rootProject.playServicesVersion"
+    compile "com.google.android.gms:play-services-maps:$rootProject.playServicesVersion"
+    compile "com.google.maps.android:android-maps-utils:$rootProject.mapUtilsServices"
+    compile "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
+
+    //Dagger dependencies
+    apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+    provided 'javax.annotation:jsr250-api:1.0'                //Required by Dagger2
+
+    //Butter Knife
+    compile "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+
+    //Square dependencies
+    compile ('com.squareup.retrofit2:retrofit:$rootProject.retrofitVersionLatest') {
+        // exclude Retrofit’s OkHttp peer-dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersionLatest"
+    compile "com.squareup.retrofit2:converter-scalars:$rootProject.retrofitVersionLatest"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersionLatest"
+    compile "com.squareup.okhttp3:okhttp:$rootProject.okHttp3Version"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttp3Version"
+    compile "com.jakewharton.fliptables:fliptables:$rootProject.flipTableVersion"
+
+    compile 'javax.annotation:jsr250-api:1.0@jar'
+
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.4'
+
+    compile 'com.facebook.stetho:stetho:1.3.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+
+
+    compile 'com.joanzapata.iconify:android-iconify-material:2.1.1' // (v2.0.0)
+    //compile 'com.crashlytics.android:crashlytics:1.+'
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    // Android Testing Support Library's runner and rules
+    androidTestCompile "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestCompile "com.android.support.test:rules:$rootProject.rulesVersion"
+
+    // Espresso UI Testing dependencies.
+    androidTestCompile "com.android.support.test.espresso:espresso-core:2.2.2"
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion") {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude group: 'com.android.support', module: 'design'
+    }
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+
+}
+    /*
+    Resolves dependency versions across test and production APKs, specifically, transitive
+    dependencies. This is required since Espresso internally has a dependency on support-annotations.
+    */
+    configurations.all {
+        resolutionStrategy.force "com.android.support:support-annotations:23.1.1"
+    }
+
+    /*
+    All direct/transitive dependencies shared between your test and production APKs need to be
+    excluded from the test APK! This is necessary because both APKs will contain the same classes. Not
+    excluding these dependencies from your test configuration will result in an dex pre-verifier error
+    at runtime. More info in this tools bug: (https://code.google.com/p/android/issues/detail?id=192497)
+    */
+    configurations.compile.dependencies.each { compileDependency ->
+        println "Excluding compile dependency: ${compileDependency.getName()}"
+        configurations.androidTestCompile.dependencies.each { androidTestCompileDependency ->
+            configurations.androidTestCompile.exclude module: "${compileDependency.getName()}"
+        }
+    }

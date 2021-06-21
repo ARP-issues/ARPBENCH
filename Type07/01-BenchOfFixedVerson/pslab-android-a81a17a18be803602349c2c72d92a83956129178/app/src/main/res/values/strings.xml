@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">PSLab</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_saved_experiments">Saved Experiments</string>
+    <string name="nav_design_experiment">Design Experiments</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="nav_report">Report Issues</string>
+    <string name="nav_help_feedback">Help &amp; Feedback</string>
+    <string name="nav_applications">Applications</string>
+
+    <string name="oscilloscope">Oscilloscope</string>
+    <string name="control">Control</string>
+    <string name="advance_control">Advance Control</string>
+    <string name="logical_analyzer">Logical Analyzer</string>
+    <string name="data_sensor_logger">Data Sensor Logger</string>
+    <string name="w_sensor_logger">Wireless Sensor</string>
+    <string name="sensor_quick_view">Sensor QuickView</string>
+    <string name="w_sensor_quick_view">Data Sensor Logger</string>
+
+    <string name="control_item_1">Control</string>
+    <string name="control_item_2">Read</string>
+    <string name="control_item_3">Advanced</string>
+
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Applications</item>
+        <item>Saved Experiments</item>
+        <item>Design Experiments</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="application_icon">Application Icon</string>
+
+    <string-array name="select_channel_mode_la">
+        <item>Single Channel Mode</item>
+        <item>Two Channel Mode</item>
+        <item>Three Channel Mode</item>
+        <item>Four Channel Mode</item>
+    </string-array>
+
+    <string name="set">SET</string>
+    <string name="read">READ</string>
+    <string name="resistance">Resistance</string>
+    <string name="capacitance">Capacitance</string>
+    <string name="frequency">Frequency</string>
+    <string name="count_pulses">Count Pulses</string>
+    <string-array name="ID">
+        <item>ID1</item>
+        <item>ID2</item>
+        <item>ID3</item>
+        <item>ID4</item>
+    </string-array>
+    <string name="reset">RESET</string>
+    <string name="voltage">Voltage</string>
+    <string name="ch1">CH1</string>
+    <string name="ch2">CH2</string>
+    <string name="ch3">CH3</string>
+    <string name="cap">CAP</string>
+    <string name="sen">SEN</string>
+    <string name="an8">AN8</string>
+    <string name="w1">Wave 1</string>
+    <string name="w2">Wave 2</string>
+    <string name="phase">Phase</string>
+    <string name="output">Output</string>
+    <string name="dutycycle">Duty cycle</string>
+    <string name="sqr1">SQR1</string>
+    <string name="sqr2">SQR2</string>
+    <string name="sqr3">SQR3</string>
+    <string name="sqr4">SQR4</string>
+    <string name="freq_range">10Hz-5kHz</string>
+    <string name="zero">0</string>
+    <string-array name="wave_type">
+        <item>SINE</item>
+        <item>SQUARE</item>
+    </string-array>
+    <string name="digital_outputs">Digital Outputs</string>
+    <string name="configure_PWM">Configure PWM</string>
+    <string name="waveform_generator">Arbitrary Waveform Generator</string>
+    <string name="autoscan">Autoscan</string>
+    <string name="select_sensor">Select Sensor</string>
+    <string name="get_raw">Get Raw</string>
+
+    <string name="not_connected">Not Connected</string>
+    <string name="initialisation_completed">Initialisation Completed</string>
+    <string name="initialising_wait">Initialising Wait…</string>
+    <string name="device_connected_successfully">Device Connected Successfully</string>
+    <string name="device_not_found">Device Not Found</string>
+
+    <string name="time_unit_la">Time -> (ms)</string>
+    <string name="analyze">Analyze</string>
+    <string name="view">VIEW</string>
+
+    <string-array name="tab_titles">
+        <item>Experiment Doc</item>
+        <item>Experiment Setup</item>
+    </string-array>
+
+    <string name="diode_iv">Diode I-V</string>
+    <string name="zener_iv">Zener I-V</string>
+    <string name="half_wave_rectifier">Half Wave Rectifier</string>
+    <string name="full_wave_rectifier">Full Wave Rectifier</string>
+    <string name="transistor_cb">Transistor CB Characteristics</string>
+    <string name="transistor_ce">Transistor CE Characteristics</string>
+    <string name="astable_multivibrator">Astable Multivibrator</string>
+    <string name="transient_rlc">Transients RLC</string>
+    <string name="bode_plots">Bode Plots</string>
+    <string name="ohms_law">Ohms Law</string>
+    <string name="m_random_sampling">M Random Sampling</string>
+    <string name="ac_and_dc">AC and DC</string>
+    <string name="lemon_cell">Lemon Cell</string>
+    <string name="ac_generator">AC Generator</string>
+    <string name="em_induction">EM Induction</string>
+    <string name="sound_beats">Sound Beats</string>
+    <string name="dust_sensor">Dust Sensor</string>
+
+    <string name="hmc5883l">hmc5883l</string>
+    <string name="mpu6050">mpu6050</string>
+    <string name="raw_data">Raw Data</string>
+    <string name="configure">Configure</string>
+    <string name="plot">Plot</string>
+
+    <string name="bx">Bx</string>
+    <string name="by">By</string>
+    <string name="bz">Bz</string>
+    <string name="ax">Ax</string>
+    <string name="ay">Ay</string>
+    <string name="az">Az</string>
+    <string name="gx">Gx</string>
+    <string name="gy">Gy</string>
+    <string name="gz">Gz</string>
+    <string name="temp">Temp</string>
+
+    <string name="gyro_range">Set Gyro Range</string>
+    <string name="accel_range">Set Accel Range</string>
+    <string name="kalman">Kalman filter</string>
+    <string name="power_up">Power Up</string>
+
+    <string-array name="gyro_range_spinner">
+        <item>250</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+    </string-array>
+
+    <string-array name="accel_range_spinner">
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+    </string-array>
+
+    <string-array name="kalman_spinner">
+        <item>0.01</item>
+        <item>0.1</item>
+        <item>1</item>
+        <item>10</item>
+        <item>100</item>
+        <item>1000</item>
+        <item>10000</item>
+        <item>null</item>
+    </string-array>
+
+    <string-array name="power_up_spinner">
+        <item></item>
+        <item></item>
+    </string-array>
+</resources>

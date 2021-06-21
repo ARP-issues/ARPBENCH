@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+    <include layout="@layout/tool_bar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"/>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </WebView>
+</LinearLayout>

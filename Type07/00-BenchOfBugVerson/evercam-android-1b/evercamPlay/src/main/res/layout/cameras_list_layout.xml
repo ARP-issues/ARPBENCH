@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/cameras_scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical">
+
+        <io.evercam.androidapp.custom.FlowLayout
+            android:id="@+id/cameras_flow_layout"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Child linear layouts will be created and inserted here dynamically -->
+
+        </io.evercam.androidapp.custom.FlowLayout>
+
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+    <include layout="@layout/float_action_button_layout"/>
+
+    <include layout="@layout/tool_bar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"/>
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/video_menu_camera_settings"
+        android:orderInCategory="1"
+        app:showAsAction="never"
+        android:title="@string/menu_camera_settings"/>
+
+    <item
+        android:id="@+id/video_menu_share"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        android:title="@string/menu_share"/>
+
+    <item
+        android:id="@+id/video_menu_view_snapshots"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        android:title="@string/menu_view_snapshot"/>
+
+    <item
+        android:id="@+id/video_menu_view_recordings"
+        android:orderInCategory="3"
+        app:showAsAction="never"
+        android:title="@string/menu_view_recordings"/>
+
+    <item
+        android:id="@+id/video_menu_create_shortcut"
+        android:orderInCategory="4"
+        app:showAsAction="never"
+        android:title="@string/menu_create_shortcut"/>
+
+    <item
+        android:id="@+id/video_menu_feedback"
+        android:orderInCategory="5"
+        app:showAsAction="never"
+        android:title="@string/menu_feedback"/>
+
+</menu>

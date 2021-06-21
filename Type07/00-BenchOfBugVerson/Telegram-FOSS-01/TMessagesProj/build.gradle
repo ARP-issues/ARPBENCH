@@ -1,0 +1,309 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+}
+
+configurations {
+    compile.exclude module: 'support-v4'
+}
+
+configurations.all {
+    exclude group: 'androidx.recyclerview', module: 'recyclerview'
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.3.2'
+    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.2'
+    implementation 'androidx.interpolator:interpolator:1.0.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.sharetarget:sharetarget:1.1.0"
+
+    compileOnly 'org.checkerframework:checker-qual:2.5.2'
+    compileOnly 'org.checkerframework:checker-compat-qual:2.5.0'
+    implementation 'com.googlecode.mp4parser:isoparser:1.0.6'
+    implementation 'com.stripe:stripe-android:2.0.2'
+    implementation 'org.osmdroid:osmdroid-android:6.1.8'
+
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.1'
+}
+
+//return an api key from a properties file.
+def getAppId(){
+    Properties properties = new Properties()
+//    properties.load(new FileInputStream("./API_KEYS"))
+    return "aaa"
+}
+def getAppHash(){
+    Properties properties = new Properties()
+//    properties.load(new FileInputStream("./API_KEYS"))
+    return "aaa"
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
+    ndkVersion "21.1.6352462"
+
+    defaultConfig.applicationId = "org.telegram.messenger"
+
+    sourceSets.main.jniLibs.srcDirs = ['./jni/']
+
+    externalNativeBuild {
+        cmake {
+            path 'jni/CMakeLists.txt'
+        }
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+        disable 'BlockedPrivateApi'
+    }
+
+    dexOptions {
+        jumboMode = true
+        // Telegram-FOSS
+        javaMaxHeapSize "2g"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+        coreLibraryDesugaringEnabled true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            jniDebuggable true
+            applicationIdSuffix ".beta"
+            minifyEnabled false
+            shrinkResources false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk.debugSymbolLevel = 'FULL'
+        }
+
+        /*debugAsan {
+            debuggable true
+            jniDebuggable true
+            signingConfig signingConfigs.debug
+            applicationIdSuffix ".beta"
+            minifyEnabled true
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            packagingOptions {
+                doNotStrip "**.so"
+            }
+
+            sourceSets {
+                main {
+                    jniLibs {
+                        srcDir {
+                            'jniLibs'
+                        }
+                    }
+                    resources {
+                        srcDir {
+                            'jniRes'
+                        }
+                    }
+                }
+            }
+        }*/
+
+        HA {
+            debuggable false
+            jniDebuggable false
+            applicationIdSuffix ".beta"
+            minifyEnabled true
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk.debugSymbolLevel = 'FULL'
+        }
+
+        release {
+            debuggable false
+            jniDebuggable false
+            minifyEnabled true
+            shrinkResources false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk.debugSymbolLevel = 'FULL'
+        }
+    }
+
+    sourceSets.debug {
+        manifest.srcFile 'config/debug/AndroidManifest.xml'
+    }
+
+    /*sourceSets.debugAsan {
+        manifest.srcFile 'config/debug/AndroidManifest.xml'
+    }*/
+
+    sourceSets.HA {
+        manifest.srcFile 'config/debug/AndroidManifest.xml'
+    }
+
+    sourceSets.release {
+        manifest.srcFile 'config/release/AndroidManifest.xml'
+    }
+
+    flavorDimensions "minApi"
+
+    productFlavors {
+        armv7 {
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+            ext {
+                abiVersionCode = 1
+            }
+        }
+        x86 {
+            ndk {
+                abiFilters "x86"
+            }
+            ext {
+                abiVersionCode = 2
+            }
+        }
+        armv7_SDK23 {
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+            sourceSets.debug {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }
+            sourceSets.release {
+                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
+            }
+            minSdkVersion 23
+            ext {
+                abiVersionCode = 3
+            }
+        }
+        x86_SDK23 {
+            ndk {
+                abiFilters "x86"
+            }
+            sourceSets.debug {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }
+            sourceSets.release {
+                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
+            }
+            minSdkVersion 23
+            ext {
+                abiVersionCode = 4
+            }
+        }
+        arm64 {
+            ndk {
+                abiFilters "arm64-v8a"
+            }
+            ext {
+                abiVersionCode = 5
+            }
+        }
+        x64 {
+            ndk {
+                abiFilters "x86_64"
+            }
+            ext {
+                abiVersionCode = 6
+            }
+        }
+        arm64_SDK23 {
+            ndk {
+                abiFilters "arm64-v8a"
+            }
+            sourceSets.debug {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }
+            /*sourceSets.debugAsan {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }*/
+            sourceSets.release {
+                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
+            }
+            minSdkVersion 23
+            ext {
+                abiVersionCode = 7
+            }
+        }
+        x64_SDK23 {
+            ndk {
+                abiFilters "x86_64"
+            }
+            sourceSets.debug {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }
+            sourceSets.release {
+                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
+            }
+            minSdkVersion 23
+            ext {
+                abiVersionCode = 8
+            }
+        }
+        afat {
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            }
+            sourceSets.debug {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }
+            /*sourceSets.debugAsan {
+                manifest.srcFile 'config/debug/AndroidManifest_SDK23.xml'
+            }*/
+            sourceSets.release {
+                manifest.srcFile 'config/release/AndroidManifest_SDK23.xml'
+            }
+            ext {
+                abiVersionCode = 9
+            }
+        }
+    }
+
+    defaultConfig.versionCode = 2246
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            output.versionCodeOverride = defaultConfig.versionCode * 10 + variant.productFlavors.get(0).abiVersionCode
+        }
+    }
+
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if (variant.buildType.name != "release" && !names.contains("afat")) {
+            setIgnore(true)
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionName "7.5.0"
+
+        vectorDrawables.generatedDensities = ['mdpi', 'hdpi', 'xhdpi', 'xxhdpi']
+        //obtain your own keys at https://core.telegram.org/api/obtaining_api_id
+        buildConfigField 'int', 'APP_ID', getAppId()
+        buildConfigField 'String', 'APP_HASH', getAppHash()
+
+        externalNativeBuild {
+            cmake {
+                version '3.10.2'
+                arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-16', "-j=16"
+            }
+        }
+    }
+}

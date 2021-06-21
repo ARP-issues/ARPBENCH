@@ -1,0 +1,11 @@
+<!--
+  ~ Copyright (c) 2016. Ted Park. All Rights Reserved
+  -->
+
+<resources>
+
+
+    <dimen name="app_camera_height">150dp</dimen>
+
+    <dimen name="bottom_height">150dp</dimen>
+</resources>

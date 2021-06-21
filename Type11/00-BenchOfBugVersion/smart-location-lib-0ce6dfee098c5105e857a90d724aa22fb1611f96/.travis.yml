@@ -1,0 +1,15 @@
+language: android
+jdk: oraclejdk7
+sudo: false
+
+android:
+  components:
+    - build-tools-22.0.1
+    - android-22
+    - extra-android-m2repository
+    - extra-google-m2repository
+    - extra-google-google_play_services
+
+script:
+    - cp gradle.properties.example gradle.properties
+    - ./gradlew clean assembleDebug testDebug

@@ -1,0 +1,4 @@
+include ':lib'
+//include ':demo'
+project(":lib").name = "android-beacon-library"
+//include ':app'

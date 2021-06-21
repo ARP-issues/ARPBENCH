@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+
+
+
+android {
+    compileSdkVersion gradle.compileSdk
+    buildToolsVersion gradle.buildTools
+
+    defaultConfig {
+        applicationId "com.sangcomz.fishbundemo"
+        minSdkVersion gradle.minSdk
+        targetSdkVersion gradle.targetSdk
+        versionCode gradle.versionCode
+        versionName gradle.versionName
+        multiDexEnabled true
+    }
+    Properties signProp = new Properties()
+    if (project.rootProject.file('playstore/sign.properties').isFile()) {
+        signProp.load(project.rootProject.file('playstore/sign.properties').newDataInputStream())
+        def password = signProp.get("password", "")
+        signingConfigs {
+            release {
+                keyAlias signProp.get("alias", "")
+                keyPassword password
+                storeFile rootProject.file("playstore/key.jks")
+                storePassword password
+            }
+        }
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (project.rootProject.file('playstore/sign.properties').isFile()) signingConfig signingConfigs.release
+
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':FishBun')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.androidx_version"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerview_version"
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "com.squareup.picasso:picasso:$rootProject.picasso_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.triplet.gradle:play-publisher:1.2.2'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply plugin: 'com.github.triplet.play'
+
+play {
+    track = 'production' // or 'rollout' or 'beta' or 'alpha'
+//    userFraction = 0.2 // only necessary for 'rollout', in this case default is 0.1 (10% of the target)
+    jsonFile = rootProject.file('playstore_kye.json')
+}
+
+task printProps {
+    doLast {
+        println System.properties['system']
+    }
+}

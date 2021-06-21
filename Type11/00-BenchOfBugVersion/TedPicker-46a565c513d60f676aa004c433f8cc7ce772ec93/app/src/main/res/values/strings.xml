@@ -1,0 +1,9 @@
+<!--
+  ~ Copyright (c) 2016. Ted Park. All Rights Reserved
+  -->
+
+<resources>
+    <string name="app_name">TedPickerDemo</string>
+
+    <string name="custom_title">Custom Title</string>
+</resources>

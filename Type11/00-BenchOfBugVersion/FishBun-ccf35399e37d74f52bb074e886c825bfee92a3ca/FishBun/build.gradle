@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'jacoco-android'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
+        classpath 'com.dicedmelon.gradle:jacoco-android:0.1.4'
+        classpath 'co.riiid:gradle-github-plugin:0.4.2'
+    }
+}
+
+
+android {
+    compileSdkVersion gradle.compileSdk
+    buildToolsVersion gradle.buildTools
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        minSdkVersion gradle.minSdk
+        targetSdkVersion gradle.targetSdk
+        consumerProguardFile('proguard-rules.pro')
+        versionCode gradle.versionCode
+        versionName gradle.versionName
+    }
+}
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: "com.jfrog.bintray"
+apply plugin: 'co.riiid.gradle'
+
+apply from: '../gradle/release.gradle'
+
+dependencies {
+    compileOnly "androidx.appcompat:appcompat:$rootProject.androidx_version"
+    compile "androidx.constraintlayout:constraintlayout:$rootProject.constraint_version"
+    compile "com.google.android.material:material:$rootProject.material_version"
+    compile "androidx.recyclerview:recyclerview:$rootProject.recyclerview_version"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.8.9'
+
+    compileOnly "com.squareup.picasso:picasso:$rootProject.picasso_version"
+    compileOnly "com.github.bumptech.glide:glide:$rootProject.glide_version"
+}

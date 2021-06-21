@@ -1,3 +1,0 @@
-[submodule "client-common-java"]
-	path = client-common-java
-	url = https://github.com/kontalk/client-common-java.git

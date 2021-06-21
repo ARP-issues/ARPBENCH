@@ -1,2 +1,0 @@
-* Security update for bundled SQLite
-* new Emoji 11!
